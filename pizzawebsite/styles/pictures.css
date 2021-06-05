@@ -1,0 +1,24 @@
+.fire {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+}
+
+.italieno {
+    width: 20%;
+    align-content: right;
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
+}
+
+.pizzaguy {
+    width: 20%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
