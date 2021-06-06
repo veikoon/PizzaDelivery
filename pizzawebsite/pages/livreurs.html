@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/pictures.css">
     <link rel="stylesheet" href="../styles/structure.css">
+    <link rel="stylesheet" href="../styles/title.css">
+    <link rel="stylesheet" href="../styles/buttons.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -12,7 +14,24 @@
 </head>
 
 <body>
-    <h2>Livreurs</h2>
+    <header>
+        <div id="titre_principal">
+            <div id="logo">
+                <img src="../resources/logo.jpg" alt="Logo" />
+            </div>
+        </div>
+        <div id="nav-container">
+            <ul id="main-menu">
+                <li id="accueil"><a href="#">Accueil</a></li>
+                <li id="produits"><a href="produits.html">Produits</a></li>
+                <li id="livreurs"><a href="livreurs.html">Livreurs</a></li>
+                <li id="commandes"><a href="livraisons.html">Suivi de commandes</a></li>
+                <li id="Statistiques"><a href="statistiques.html">Statistiques</a></li>
+
+            </ul>
+        </div>
+    </header>
+    <h2 class="lightfont">Livreurs</h2>
     <img src="../resources/funny-pizza-delivery-guy-vector-id997163114.png" class="pizzaguy"> </div>
     <div>
         <div id="app">
@@ -20,8 +39,11 @@
         </div>
     </div>
     <div class="grillelivreurs"></div>
+    <div id="footer">
+        <footercomp></footercomp>
+    </div>
     <script src="../components/app.js"></script>
-
+    <script src="../components/footer.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 

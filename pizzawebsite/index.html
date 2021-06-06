@@ -3,6 +3,9 @@
 
 <head>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/buttons.css">
+    <link rel="stylesheet" href="styles/structure.css">
+    <link rel="stylesheet" href="styles/title.css">
     <link rel="stylesheet" href="styles/pictures.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -11,13 +14,29 @@
 
 <body>
     <div class="accueil">
-        <h1>Société RaPizz</h1>
-        <h2>"Buon appettito!"</h2>
+        <h1 id="main_title" class="lightfont">Société RaPizz</h1>
+        <h2 id="slogan" class="lightfont">"Buon appettito!"</h2>
         <button class="enter" onclick="document.getElementById('activité').scrollIntoView();">Enter</button>
         <img src="resources/hd-nose-clipart-italian-cuisine-pizza-chef-chef-cartoon-chef-background-italian-food-png-2386_2377.png" class="italieno"> </div>
-    </div>
-    <div class="blank_space"> </div>
+    <div class="blank_space"></div>
     <div class="activite" id="activité">
+        <header>
+            <div id="titre_principal">
+                <div id="logo">
+                    <img src="resources/logo.jpg" alt="Logo" />
+                </div>
+            </div>
+            <div id="nav-container">
+                <ul id="main-menu">
+                    <li id="accueil"><a href="#">Accueil</a></li>
+                    <li id="produits"><a href="pages/produits.html">Produits</a></li>
+                    <li id="livreurs"><a href="pages/livreurs.html">Livreurs</a></li>
+                    <li id="commandes"><a href="pages/livraisons.html">Suivi de commandes</a></li>
+                    <li id="Statistiques"><a href="pages/statistiques.html">Statistiques</a></li>
+
+                </ul>
+            </div>
+        </header>
         <h3>Activité</h3>
         <div class="container">
             <div class="stat">
@@ -76,10 +95,18 @@
                 <br>
                 <img src="resources/pizza-png.png" class="fire"> </div>
         </div>
-    </div>
-    <script type="text/javascript" src="data/interactions.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="components/app.vue"></script>
+
+        <div id="footer">
+            <div class="mecenes">
+                <a href="https://www.esiee.fr/">
+                    <p>qqchose à mettre dans le footer. </p>
+                </a>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="data/interactions.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="components/app.vue"></script>
 
 </body>
 

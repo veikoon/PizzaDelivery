@@ -19,6 +19,51 @@
 .pizzaguy {
     width: 20%;
     position: absolute;
-    top: 0;
+    top: 20%;
     right: 0;
+}
+
+
+/*Produits*/
+
+.produit {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+.texte {
+    border-left: 1px solid rgb(255, 255, 255);
+}
+
+.basic_info {
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+    display: flex;
+}
+
+.prix {
+    margin-top: 2.5%;
+}
+
+.description {
+    width: fit-content;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.pizza {
+    position: relative;
+    display: flex;
+    margin-top: auto;
+}
+
+.pizza_pic {
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.pizza_pic img {
+    width: 12.4em;
 }

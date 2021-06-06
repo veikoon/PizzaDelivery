@@ -1,0 +1,42 @@
+.enter {
+    background-color: rgb(255, 255, 255);
+    /* Green */
+    width: fit-content;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 16px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enter:hover {
+    background-color: azure;
+}
+
+.navbutton {
+    font-weight: lighter;
+    background-color: rgb(255, 255, 255);
+    /* Green */
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 28px;
+    margin: 8px;
+}
+
+.buttoncenter {
+    text-align: center;
+}

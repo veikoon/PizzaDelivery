@@ -1,0 +1,48 @@
+#main_title {
+    padding-top: 5%;
+    font-size: 1000%;
+    margin-bottom: 0;
+}
+
+#slogan {
+    font-size: 78px;
+}
+
+.lightfont {
+    letter-spacing: large;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Great Vibes', cursive;
+    color: aliceblue;
+}
+
+h2 {
+    font-size: 120px;
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    letter-spacing: large;
+}
+
+h4 {
+    font-weight: lighter;
+    font-family: 'Great Vibes', cursive;
+    font-size: 300%;
+    padding-top: 5%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    letter-spacing: large;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nom_pizza {
+    margin-left: 5px;
+}
