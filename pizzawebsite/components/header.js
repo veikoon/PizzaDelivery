@@ -13,9 +13,8 @@ Vue.component('headercomp', {
                 <li id="livreurs"><a href="livreurs.html">Livreurs</a></li>
                 <li id="commandes"><a href="livraisons.html">Suivi de commandes</a></li>
                 <li id="Statistiques"><a href="statistiques.html">Statistiques</a></li>
-
             </ul>
-        </div>
+    </div>
     </header>`
 })
 

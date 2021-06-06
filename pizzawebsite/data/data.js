@@ -1,1 +1,0 @@
-livreurs = ["luc", "alex", "lucy"];
