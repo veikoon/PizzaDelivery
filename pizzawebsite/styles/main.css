@@ -1,3 +1,279 @@
+/* Eléments principaux de la page */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #A14F4F;
+}
+
+.blank_space {
+    width: 100%;
+    height: 60vh;
+}
+
+#main {
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    position: relative;
+}
+
+body {
+    text-align: center;
+}
+
+
+/*********************** TITRES*********************/
+
+#main_title {
+    padding-top: 5%;
+    font-size: 1000%;
+    margin-bottom: 0;
+}
+
+#slogan {
+    font-size: 78px;
+    margin-bottom: 5%;
+}
+
+.lightfont {
+    letter-spacing: large;
+    text-align: center;
+    font-weight: lighter;
+    font-family: 'Great Vibes', cursive;
+    color: aliceblue;
+}
+
+h2 {
+    font-size: 120px;
+    margin-top: 5%;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    letter-spacing: large;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+h4 {
+    font-weight: lighter;
+    font-family: 'Great Vibes', cursive;
+    font-size: 300%;
+    padding-top: 5%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    letter-spacing: large;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nom_pizza {
+    margin-left: 5px;
+}
+
+
+/************************* Header *******************/
+
+header {
+    background: #832424;
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+}
+
+#logo {
+    margin-top: none;
+    margin-bottom: none;
+}
+
+#logo img {
+    width: 30%;
+    height: 30%;
+}
+
+#nav-container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    /*justify-content: space-between;*/
+    align-items: center;
+}
+
+#nav-container a {
+    align-content: center;
+    align-items: center;
+}
+
+
+/****************** Navigation *****************/
+
+#main-menu {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    align-content: center;
+    align-items: center;
+}
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#main-menu li {
+    width: 12.4em;
+    display: block;
+    border-left: 1px solid rgb(255, 255, 255);
+    float: left;
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+}
+
+li {
+    list-style-type: none;
+}
+
+#main-menu li a {
+    text-align: center;
+    display: block;
+    color: rgb(255, 255, 255);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#main-menu li a:hover {
+    font-weight: bold;
+}
+
+
+/**************************Footer**********************/
+
+#footer {
+    clear: both;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-top: 50px;
+    height: 50px;
+}
+
+.mecenes {
+    background: #32a15f;
+    text-align: center;
+}
+
+.mecenes a {
+    display: block;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: 'Muli', sans-serif;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/********************** BOUTONS **********************/
+
+.enter {
+    background-color: rgb(255, 255, 255);
+    /* Green */
+    width: fit-content;
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 16px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.enter:hover {
+    background-color: azure;
+}
+
+.navbutton {
+    font-weight: lighter;
+    background-color: rgb(255, 255, 255);
+    /* Green */
+    border: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    width: 300px;
+    height: 60px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    display: inline-block;
+    font-size: 28px;
+    margin: 8px;
+}
+
+.buttoncenter {
+    text-align: center;
+}
+
+
+/********************** CONTAINERS ****************/
+
+
+/***PAGE ACCUEIL ****/
+
+.accueil {
+    width: 100%;
+    height: 100%;
+    display: grid;
+}
+
+#bloc_page {
+    margin: auto;
+    background: #a14848;
+    font-family: 'Muli', sans-serif;
+    color: white;
+}
+
+.title {
+    width: 80%;
+}
+
+.grillelivreurs {
+    background-color: white;
+}
+
+
+/***$ACTIVITE$***/
+
+
+/* activité sur la page index.html*/
+
 .activite {
     width: 100%;
     height: 100%;
@@ -5,9 +281,8 @@
     padding-bottom: 10%;
 }
 
-.container {
-    display: flex
-}
+
+/* Navigation de la page activité acec les 4 boutons et l'image */
 
 .navacti {
     width: 50%;
@@ -16,6 +291,9 @@
     position: relative;
     align-content: center;
 }
+
+
+/* statistiques.html*/
 
 .stat {
     border: #724b4b;
@@ -43,4 +321,130 @@ thead,
 tfoot {
     background-color: #333;
     color: #fff;
+}
+
+html {
+    padding-bottom: 0%;
+    margin-bottom: 0;
+}
+
+
+/******************* IMAGES ********************/
+
+.fire {
+    text-align: center;
+    margin: auto;
+    display: flex;
+    width: 50%;
+    position: absolute;
+    bottom: 10px;
+    left: 25%;
+}
+
+.italieno {
+    width: 20%;
+    align-content: right;
+    position: absolute;
+    top: 480px;
+    right: 0px;
+}
+
+.pizzaguy {
+    width: 20%;
+    position: absolute;
+    top: 20%;
+    right: 0;
+}
+
+
+/**********Produits***********/
+
+.produit {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.texte {
+    border-left: 1px solid rgb(255, 255, 255);
+}
+
+.basic_info {
+    width: 100%;
+    height: 100%;
+    margin-left: 5%;
+    display: flex;
+}
+
+.prix {
+    margin-top: 2.5%;
+}
+
+.description {
+    width: fit-content;
+    margin-top: 5%;
+    margin-left: 15%;
+}
+
+.pizza {
+    position: relative;
+    display: flex;
+    margin-top: auto;
+}
+
+.pizza_pic {
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.pizza_pic img {
+    width: 12.4em;
+}
+
+
+/*********** COMPOSANTS  VUESJS*******/
+
+#app {
+    padding: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.livreurcomponent {
+    border-radius: 20%;
+    display: block;
+    align-content: center;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 30%;
+    height: 200px;
+}
+
+.livreurcomponent p {
+    margin-left: 5%;
+    margin-right: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 0;
+}
+
+.livreurcomponent .name {
+    align-items: center;
+    width: fit-content;
+    display: block;
+    font-size: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }

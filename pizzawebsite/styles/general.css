@@ -1,0 +1,12 @@
+.centering {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.borderless {
+    margin: 0 auto;
+}
+
+.flexdisplay {
+    display: flex;
+}
