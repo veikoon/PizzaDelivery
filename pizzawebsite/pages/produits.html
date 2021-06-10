@@ -2,6 +2,7 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Muli|Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../styles/general.css">
     <link rel="stylesheet" href="../styles/main.css">
@@ -18,121 +19,21 @@
             <h2 class="lightfont">
                 Produits
             </h2>
+            
 
-            <div id="produits" class="centering">
-                <div class="produit">
-                    <div class="pizza_pic">
-                        <img src="../resources/pizzas/pizza1.png" alt="Picture of pizza 1" />
-                    </div>
 
-                    <div class="texte">
-                        <div class="nom_pizza">
-                            <h1>
-                                <font color="white">Pepperoni ma gueule</font>
-                            </h1>
-                        </div>
-                        <div class="basic_info">
-                            <div class="prix">
-                                <ul id="taille">
-                                    <li id="naine">Naine....................5€</li>
-                                    <li id="humaine">Humaine.............13€</li>
-                                    <li id="ogresque">Ogresque............20€</li>
-
-                                </ul>
-                            </div>
-                            <div class="description">
-                                Jsp frère y'a du Pepperoni quoi, fromage à la limite et de la sauce tomate.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="produit" class="centering">
-                    <div class="pizza_pic">
-                        <img src="../resources/pizzas/pizza2.png" alt="Picture of pizza 2" />
-                    </div>
-
-                    <div class="texte">
-                        <div class="nom_pizza">
-                            <h1>
-                                <font color="white">La Forestière</font>
-                            </h1>
-                        </div>
-                        <div class="basic_info">
-                            <div class="prix">
-                                <ul id="taille">
-                                    <li id="naine">Naine....................5€</li>
-                                    <li id="humaine">Humaine.............13€</li>
-                                    <li id="ogresque">Ogresque............20€</li>
-
-                                </ul>
-                            </div>
-                            <div class="description">
-                                Jambon, mozzarella, champignon, poivre.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="produit" class="centering">
-                    <div class="pizza_pic">
-                        <img src="../resources/pizzas/pizza3.png" alt="Picture of pizza 2" />
-                    </div>
-
-                    <div class="texte">
-                        <div class="nom_pizza">
-                            <h1>
-                                <font color="white">La Végératienne</font>
-                            </h1>
-                        </div>
-                        <div class="basic_info">
-                            <div class="prix">
-                                <ul id="taille">
-                                    <li id="naine">Naine....................5€</li>
-                                    <li id="humaine">Humaine.............13€</li>
-                                    <li id="ogresque">Ogresque............20€</li>
-
-                                </ul>
-                            </div>
-                            <div class="description">
-                                Tomates, mozzarella, olives, basilic, poivre.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="produit" class="centering">
-                    <div class="pizza_pic">
-                        <img src="../resources/pizzas/pizza4.png" alt="Picture of pizza 2" />
-                    </div>
-
-                    <div class="texte">
-                        <div class="nom_pizza">
-                            <h1>
-                                <font color="white">La Hawaiienne</font>
-                            </h1>
-                        </div>
-                        <div class="basic_info">
-                            <div class="prix">
-                                <ul id="taille">
-                                    <li id="naine">Naine....................5€</li>
-                                    <li id="humaine">Humaine.............13€</li>
-                                    <li id="ogresque">Ogresque............20€</li>
-
-                                </ul>
-                            </div>
-                            <div class="description">
-                                Jambon, mozzarella, Ananas.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="produit" class="centering">
+                <produit v-for="produit in produits" v-bind:key="produit.id" v-bind:produit='produit'></produit>
 
             </div>
         </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
+        <script src="../components/produits.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
     </div>
 </body>

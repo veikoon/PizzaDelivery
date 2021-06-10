@@ -11,7 +11,7 @@ html {
 }
 
 body {
-    background-color: #A14F4F;
+    background-color: #a14848;
 }
 
 .blank_space {
@@ -277,7 +277,6 @@ a {
 
 #bloc_page {
     margin-bottom: 10%;
-    background: #a14848;
     font-family: 'Muli', sans-serif;
     color: white;
 }
@@ -391,16 +390,39 @@ html {
 
 /**********Produits***********/
 
-.produit {
-    padding-top: 5%;
-    padding-bottom: 5%;
+#produit{
+    padding: 5%;
     display: flex;
-    margin: 0 auto;
-    width: 50%;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
 }
 
-.texte {
-    border-left: 1px solid rgb(255, 255, 255);
+.produit {
+    border-radius: 20%;
+    display: block;
+    align-content: center;
+    background-color: white;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 30%;
+    height: 200px;
+}
+
+.texte{
+    margin-top: 3%;
+
+}
+
+.nom_pizza{
+    font-family: 'Great Vibes', cursive;
+    font-size: larger;
 }
 
 .basic_info {
@@ -408,6 +430,8 @@ html {
     height: 100%;
     margin-left: 5%;
     display: flex;
+    color: black;
+    font-size: large;
 }
 
 .prix {
@@ -415,7 +439,7 @@ html {
 }
 
 .description {
-    width: fit-content;
+    width: 30%;
     margin-top: 5%;
     margin-left: 15%;
 }
@@ -425,16 +449,6 @@ html {
     display: flex;
     margin-top: auto;
 }
-
-.pizza_pic {
-    margin-left: 10%;
-    margin-right: 5%;
-}
-
-.pizza_pic img {
-    width: 12.4em;
-}
-
 
 /*********** COMPOSANTS  VUESJS*******/
 
