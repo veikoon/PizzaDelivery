@@ -11,8 +11,8 @@ public class Pizza {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nom")
-    private String nom;
+    @Column(name = "name")
+    private String name;
 
 
     @OneToOne(fetch = FetchType.LAZY)

@@ -12,7 +12,7 @@ public class Taille {
     private Long id;
 
     @Column(name = "name")
-    private ETaille name;
+    private String name;
 
     @Column(name = "prix")
     private float prix;
@@ -21,16 +21,16 @@ public class Taille {
 
     }
 
-    public Taille(ETaille name, int prix) {
+    public Taille(String name, int prix) {
         this.name = name;
         this.prix = prix;
     }
 
-    public ETaille getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(ETaille name) {
+    public void setName(String name) {
         this.name = name;
     }
 

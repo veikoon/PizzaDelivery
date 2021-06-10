@@ -11,6 +11,6 @@ public class Vehicule {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nom")
-    private EVehicule nom;
+    @Column(name = "name")
+    private Long name;
 }
