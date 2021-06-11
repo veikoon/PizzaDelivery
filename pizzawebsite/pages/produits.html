@@ -19,12 +19,47 @@
             <h2 class="lightfont">
                 Produits
             </h2>
-            
-
 
             <div id="produit" class="centering">
                 <produit v-for="produit in produits" v-bind:key="produit.id" v-bind:produit='produit'></produit>
 
+            </div>
+            <div class="new_product">
+                <div class="add_headline">
+                    <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+                
+                    <div class="add_text">
+                        Ajouter une nouvelle pizza
+                    </div>
+                </div>
+                <div class="form_centering">
+                    <form>
+                        <div class="form_content">
+                            <br>
+                            <p>Nom de la pizza
+                                <input type="text" name="nomPizza">
+                            </p>
+                            <p>Prix de la naine
+                                <input type="float" name="prixNaine">
+                            </p>
+                            <p>Prix de l'humaine
+                                <input type="float" name="prixNaine">
+                            </p>
+                            <p>Prix de l'ogresse
+                                <input type="float" name="prixNaine">
+                            </p>
+                            <p>Description de la pizza
+                                <input type="text" name="descPizza">
+                            </p>
+                            <br>
+                        </div>
+                        
+                      
+                       <input name="Ajouter" type="submit" value="Ajouter">
+                        </p>
+                       </form>
+                </div>
+                
             </div>
         </div>
         <div id="footer">

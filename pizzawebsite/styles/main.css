@@ -387,8 +387,45 @@ html {
     padding-left: 20px;
 }
 
+.add_icon{
+    width: 10%;
+    /*padding-left: 20px;*/
+}
+
 
 /**********Produits***********/
+
+.new_product{
+    border-radius: 20%;
+    /*background-color: white;*/
+}
+
+.add_headline{
+    display: flex;
+    justify-content: center;
+}
+
+.form_centering{
+    display: flex;
+    justify-content: center;
+}
+
+.form_content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+}
+
+
+.add_text{
+    display: flex;
+    padding-left: 20px;
+    font-size: xx-large;
+    align-content: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
 
 #produit{
     padding: 5%;

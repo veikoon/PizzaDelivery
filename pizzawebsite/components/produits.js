@@ -18,7 +18,7 @@ Vue.component('produit', {
                     </ul>
                 </div>
                 <div class="description">
-                {{produit.description}}
+                {{produit.descPizza}}
                 </div>
             </div>
         </div>
@@ -29,10 +29,10 @@ var app = new Vue({
     el: '#produit',
     data: {
         produits: [
-            { nomPizza: "La Pepperoni", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, description: "Pepperoni et mozzarella.", pizzaPicture: "../resources/pizzas/pizza1.png"},
-            { nomPizza: "La Forestière", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, description: "Jambon, mozzarella, champignon, poivre.", pizzaPicture: "../resources/pizzas/pizza2.png"},
-            { nomPizza: "La Végétarienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, description: "Tomates, mozzarella, olives, basilic, poivre.", pizzaPicture: "../resources/pizzas/pizza3.png"},
-            { nomPizza: "La Hawaiienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, description: "Jambon, mozzarella, Ananas.", pizzaPicture: "../resources/pizzas/pizza4.png"}
+            { nomPizza: "La Pepperoni", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Pepperoni et mozzarella."},
+            { nomPizza: "La Forestière", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Jambon, mozzarella, champignon, poivre."},
+            { nomPizza: "La Végétarienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Tomates, mozzarella, olives, basilic, poivre."},
+            { nomPizza: "La Hawaiienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Jambon, mozzarella, Ananas."}
         ]
     }
 })
