@@ -22,6 +22,9 @@ Vue.component('produit', {
                 </div>
             </div>
         </div>
+        <div class="remove">
+            <button>Supprimer la pizza</button>
+        </div>
     </div>`
 })
 

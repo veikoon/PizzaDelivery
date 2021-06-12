@@ -401,14 +401,15 @@ html {
 
 /**********Produits***********/
 
-.new_product {
-    border-radius: 20%;
-    /*background-color: white;*/
+.new_component {
+    font-family: 'Muli', sans-serif;
+    color: white;
 }
 
 .add_headline {
     display: flex;
     justify-content: center;
+    
 }
 
 .form_centering {
@@ -420,6 +421,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    color: white;
 }
 
 .add_text {
@@ -453,7 +455,7 @@ html {
     padding-top: auto;
     padding-left: auto;
     width: 30%;
-    height: 200px;
+    height: fit-content;
 }
 
 .texte {
@@ -490,6 +492,10 @@ html {
     margin-top: auto;
 }
 
+.remove{
+    padding-bottom: 5%;
+}
+
 
 /*********** COMPOSANTS  VUESJS*******/
 
@@ -517,7 +523,7 @@ html {
     padding-top: auto;
     padding-left: auto;
     width: 30%;
-    height: 200px;
+    height: fit-content;
 }
 
 .livreurcomponent p {
@@ -561,5 +567,14 @@ html {
     padding-top: auto;
     padding-left: auto;
     width: 30%;
-    height: 200px;
+    height: fit-content;
+}
+
+.component_content{
+    display:flex;
+    flex-direction: column;
+}
+
+.retard{
+    display:flex;
 }

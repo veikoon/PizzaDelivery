@@ -22,6 +22,37 @@
                 <livreurs v-for="livreur in livreursid" v-bind:key="livreur.id" v-bind:livreur='livreur'></livreurs>
             </div>
         </div>
+        <div class="new_component">
+            <div class="add_headline">
+                <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+            
+                <div class="add_text">
+                    Ajouter un nouveau livreur
+                </div>
+            </div>
+            <div class="form_centering">
+                <form>
+                    <div class="form_content">
+                        <br>
+                        <p>Nom du livreur
+                            <input type="text" name="nomLivreur">
+                        </p>
+                        <p>Age du livreur
+                            <input type="int" name="ageLivreur">
+                        </p>
+                        <p>Retards du livreur
+                            <input type="float" name="retardLivreur">
+                        </p>
+                        <br>
+                    </div>
+                    
+                  
+                   <input name="Ajouter" type="submit" value="Ajouter">
+                    </p>
+                   </form>
+            </div>
+            
+        </div>
         <div class="grillelivreurs"></div>
         <div id="footer">
             <footercomp></footercomp>

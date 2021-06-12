@@ -15,6 +15,9 @@ Vue.component('livraison', {
       <br>
       Retards :{{livraison.retard}}
       </p> </div>
+      <div class="remove">
+      <button>Supprimer la livraison</button>
+      </div>
       </div>`
 })
 

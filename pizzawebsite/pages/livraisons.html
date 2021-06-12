@@ -19,6 +19,48 @@
         <div id="livraison">
             <livraison v-for="livraison in livraisons" v-bind:key="livraison.id" v-bind:livraison='livraison'></livraison>
         </div>
+        <div class="new_component">
+            <div class="add_headline">
+                <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+            
+                <div class="add_text">
+                    Ajouter une nouvelle livraison
+                </div>
+            </div>
+            <div class="form_centering">
+                <form>
+                    <div class="form_content">
+                        <br>
+                        <p>ID de la livraison
+                            <input type="int" name="idLivraison">
+                        </p>
+                        <p>Livreur
+                            <select name = "dropdown_livreurs">
+                                <option value = "Alex">Alex</option>
+                                <option value = "Vincent">Vincent</option>
+                                <option value = "Cathy">Cathy</option>
+                                </select>
+                        </p>
+                        <p>Véhicule
+                            <select name = "dropdown_vehicules">
+                                <option value = "voiture_1">voiture 1</option>
+                                <option value = "voiture_2">voiture 2</option>
+                                <option value = "voiture_3">voiture 3</option>
+                                </select>
+                        </p>
+                        <p>Date
+                            <input type="date" name="dateLivraison">
+                        </p>
+                        <br>
+                    </div>
+                    
+                  
+                   <input name="Ajouter" type="submit" value="Ajouter">
+                    </p>
+                   </form>
+            </div>
+            
+        </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
