@@ -409,7 +409,6 @@ html {
 .add_headline {
     display: flex;
     justify-content: center;
-    
 }
 
 .form_centering {
@@ -492,7 +491,7 @@ html {
     margin-top: auto;
 }
 
-.remove{
+.remove {
     padding-bottom: 5%;
 }
 
@@ -570,11 +569,6 @@ html {
     height: fit-content;
 }
 
-.component_content{
-    display:flex;
-    flex-direction: column;
-}
-
-.retard{
-    display:flex;
+.retard {
+    display: flex;
 }

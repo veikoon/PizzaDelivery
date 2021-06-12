@@ -2,7 +2,7 @@ const https = require('http')
 const options = {
     hostname: 'localhost',
     port: 8080,
-    path: '/pizza',
+    path: '/pizza?name=ok',
     method: 'GET',
 }
 

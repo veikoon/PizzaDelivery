@@ -2,22 +2,16 @@ Vue.component('livreurs', {
     props: ['livreur'],
     template: `
     <div class="livreurcomponent">
-   
         <div class = "name">
             {{livreur.name}}
         </div>
-        <div class="component_content">
-            <p>
             age:
             {{livreur.age}}
             <br>
-            <div class="retard">
                 retards : 
                 {{livreur.retards}}
-                <br>
                 <button>-</button>
-                <button>+</button> </p></div>
-            </div>
+                <button>+</button>
             <div class="remove">
                 <button>Supprimer le livreur</button>
             </div>
