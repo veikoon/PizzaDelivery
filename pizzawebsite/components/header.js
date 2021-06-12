@@ -2,7 +2,7 @@ Vue.component('headercomp', {
     template: `
     <header>
         <div id="titre_principal">
-        <div id="logo">
+        <div id="logo" onclick="window.location.href='index.html'">
         <img src="../resources/logo.png" alt="Logo" />
     </div>
         </div>
