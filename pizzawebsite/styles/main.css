@@ -330,6 +330,8 @@ a {
     margin-right: auto;
 }
 
+
+/*
 table {
     margin-bottom: 40px;
     align-content: left;
@@ -349,6 +351,7 @@ tfoot {
     background-color: #333;
     color: #fff;
 }
+*/
 
 html {
     padding-bottom: 0%;
@@ -567,6 +570,52 @@ html {
     padding-left: auto;
     width: 30%;
     height: fit-content;
+}
+
+.statcomponent {
+    color: white;
+    display: block;
+    align-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 80%;
+    height: fit-content;
+}
+
+.statcomponent .groupe {
+    align-items: left;
+    width: fit-content;
+    display: block;
+    font-size: 30px;
+    padding-left: 5%;
+}
+
+.statecomponent table {
+    border: 1px solid #333;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.statecomponent tbody,
+tr {
+    border: 1px solid #333;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.statecomponent td {
+    width: 180px;
 }
 
 .retard {

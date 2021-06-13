@@ -2,8 +2,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="../styles/main.css">
+
     <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -16,13 +17,13 @@
             <headercomp></headercomp>
         </div>
         <h2 class="lightfont">Statistiques</h2>
-        <div id="livraison">
-            <livraison v-for="livraison in livraisons" v-bind:key="livraison.id" v-bind:livraison='livraison'></livraison>
+        <div id="statistiques">
+            <stat v-for="stats in stats" v-bind:key="stats.groupe" v-bind:stats='stats'></stat>
         </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
-        <script src="../components/livraisons.js"></script>
+        <script src="../components/stats.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
