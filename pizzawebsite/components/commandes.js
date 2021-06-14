@@ -1,22 +1,22 @@
-Vue.component('livraison', {
-    props: ['livraison'],
+Vue.component('commande', {
+    props: ['commande'],
     template: `
-    <div class="livraisonscomponent">
+    <div class="commandecomponent">
    
-      <div class = "name">{{livraison.id}} </div>
+      <div class = "name">{{commande.id}} </div>
       <div><p><br>
       Livreur:
-      {{livraison.livreur}}
+      {{commande.livreur}}
       <br>
-      Pizza:
-      {{livraison.pizza}}
-      <br>
+        Pizza:
+        {{commande.pizza}}
+        <br>
      Vehicule : 
-      {{livraison.vehicule}}
+      {{commande.vehicule}}
       <br>
-      Date: {{livraison.date}}
+      Date: {{commande.date}}
       <br>
-      Retards :{{livraison.retard}}
+      Retards :{{commande.retard}}
       </p> </div>
       <div class="remove">
       <button>Supprimer la livraison</button>
@@ -25,9 +25,9 @@ Vue.component('livraison', {
 })
 
 var app = new Vue({
-    el: '#livraison',
+    el: '#commande',
     data: {
-        livraisons: [
+        commandes: [
             { id: 1, livreur: "Luc", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
             { id: 2, livreur: "Alex", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
             { id: 3, livreur: "Lucy", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },

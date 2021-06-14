@@ -330,34 +330,23 @@ a {
     margin-right: auto;
 }
 
-
-/*
-table {
+.stat table {
     margin-bottom: 40px;
     align-content: left;
     margin-left: auto;
     margin-right: auto;
+    margin-left: 5%;
 }
 
-table,
-td {
+.stat table,
+.stat td {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: larger;
     color: black;
+    text-align: left;
 }
 
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
-}
-*/
-
-html {
-    padding-bottom: 0%;
-    margin-bottom: 0;
-}
-
+.stat thead,
 
 /******************* IMAGES ********************/
 
@@ -572,6 +561,88 @@ html {
     height: fit-content;
 }
 
+#commande {
+    padding: 5%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.commandecomponent {
+    border-radius: 20%;
+    display: block;
+    align-content: center;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 30%;
+    height: fit-content;
+}
+
+#clients {
+    padding: 5%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clientscomponent {
+    border-radius: 20%;
+    display: block;
+    align-content: center;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 30%;
+    height: fit-content;
+}
+
+#ingredients {
+    padding: 5%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ingredientcomponent {
+    color: #333;
+    border-radius: 20%;
+    display: block;
+    align-content: center;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    align-content: center;
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: auto;
+    padding-left: auto;
+    width: 20%;
+    height: fit-content;
+}
+
 .statcomponent {
     color: white;
     display: block;
@@ -595,27 +666,33 @@ html {
     padding-left: 5%;
 }
 
-.statecomponent table {
-    border: 1px solid #333;
+
+/* TABLEAU */
+
+#stats {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
 }
 
-.statecomponent tbody,
-tr {
-    border: 1px solid #333;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+#stats td,
+#stats th {
+    border: 1px solid #ddd;
+    padding: 8px;
 }
 
-.statecomponent td {
-    width: 180px;
+#stats th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+#stat td:nth-child(1) {
+    width: 40%;
+}
+
+#stat td:nth-child(2) {
+    width: 60%;
 }
 
 .retard {

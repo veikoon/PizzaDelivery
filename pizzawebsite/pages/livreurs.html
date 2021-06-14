@@ -25,7 +25,7 @@
         <div class="new_component">
             <div class="add_headline">
                 <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
-            
+
                 <div class="add_text">
                     Ajouter un nouveau livreur
                 </div>
@@ -45,19 +45,54 @@
                         </p>
                         <br>
                     </div>
-                    
-                  
-                   <input name="Ajouter" type="submit" value="Ajouter">
+
+
+                    <input name="Ajouter" type="submit" value="Ajouter">
                     </p>
-                   </form>
+                </form>
             </div>
-            
+
         </div>
-        <div class="grillelivreurs"></div>
+        <h2 class="lightfont">Clients</h2>
+        <div id="clients">
+            <clients v-for="client in clients" v-bind:key="client.id" v-bind:client='client'></clients>
+        </div>
+        <div class="new_component">
+            <div class="add_headline">
+                <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+
+                <div class="add_text">
+                    Ajouter un nouveau client
+                </div>
+            </div>
+            <div class="form_centering">
+                <form>
+                    <div class="form_content">
+                        <br>
+                        <p>Nom du client
+                            <input type="text" name="nomClient">
+                        </p>
+                        <p>Prenom du client
+                            <input type="text" name="prenomClient">
+                        </p>
+                        <p>Adresse du client
+                            <input type="int" name="ageLivreur">
+                        </p>
+                        <br>
+                    </div>
+
+
+                    <input name="Ajouter" type="submit" value="Ajouter">
+                    </p>
+                </form>
+            </div>
+
+        </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
-        <script src="../components/app.js"></script>
+        <script src="../components/livreurs.js"></script>
+        <script src="../components/clients.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
