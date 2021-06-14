@@ -2,6 +2,7 @@ package com.esiee.pizzadelivery.model;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Pizza")
@@ -12,15 +13,21 @@ public class Pizza {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "taille_id", referencedColumnName = "id")
-    private Taille taille;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "size", nullable = false)
+    private Size size;
 
-    public Pizza(){
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "ingredients", nullable = false)
+    private List<Ingredient> ingredients;
 
+    public Pizza(String name, Size size, List<Ingredient> ingredients) {
+        this.name = name;
+        this.size = size;
+        this.ingredients = ingredients;
     }
 
     public Long getId() {
@@ -37,5 +44,21 @@ public class Pizza {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Size getTaille() {
+        return size;
+    }
+
+    public void setTaille(Size size) {
+        this.size = size;
+    }
+
+    public List<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
     }
 }

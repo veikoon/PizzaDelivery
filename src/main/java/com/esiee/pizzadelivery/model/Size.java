@@ -3,25 +3,25 @@ package com.esiee.pizzadelivery.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Taille")
-public class Taille {
+@Table(name = "Size")
+public class Size {
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "prix")
+    @Column(name = "prix", nullable = false)
     private float prix;
 
-    public Taille(){
+    public Size(){
 
     }
 
-    public Taille(String name, int prix) {
+    public Size(String name, int prix) {
         this.name = name;
         this.prix = prix;
     }

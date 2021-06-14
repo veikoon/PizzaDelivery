@@ -3,33 +3,39 @@ package com.esiee.pizzadelivery.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Livreur")
-public class Livreur {
+@Table(name = "Staff")
+public class Staff {
 
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "surname")
+    @Column(name = "surname", nullable = false)
     private String surname;
 
-    @Column(name = "adress")
-    private String adress;
+    @Column(name = "address")
+    private String address;
 
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     private String phone;
 
-    public Livreur() {
+    @Column(name = "nbDelay", nullable = false, columnDefinition="integer default '0'")
+    private int nbDelay;
+
+    @Column(name = "age", nullable = false)
+    private int age;
+
+    public Staff() {
     }
 
-    public Livreur(String name, String surname, String adress, String phone) {
+    public Staff(String name, String surname, String address, String phone) {
         this.name = name;
         this.surname = surname;
-        this.adress = adress;
+        this.address = address;
         this.phone = phone;
     }
 
@@ -58,11 +64,11 @@ public class Livreur {
     }
 
     public String getAdress() {
-        return adress;
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAdress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -71,5 +77,21 @@ public class Livreur {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public int getRetard() {
+        return nbDelay;
+    }
+
+    public void setRetard(int nbDelay) {
+        this.nbDelay = nbDelay;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

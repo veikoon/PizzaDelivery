@@ -1,6 +1,6 @@
 package com.esiee.pizzadelivery.repository;
 
-import com.esiee.pizzadelivery.model.User;
+import com.esiee.pizzadelivery.model.Client;
 import com.esiee.pizzadelivery.model.Vehicule;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;

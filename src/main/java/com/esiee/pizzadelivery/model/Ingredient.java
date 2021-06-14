@@ -3,8 +3,8 @@ package com.esiee.pizzadelivery.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Vehicule")
-public class Vehicule {
+@Table(name = "Ingredient")
+public class Ingredient {
 
     @Id
     @GeneratedValue
@@ -14,10 +14,10 @@ public class Vehicule {
     @Column(name = "name", nullable = false)
     private String name;
 
-    public Vehicule() {
+    public Ingredient() {
     }
 
-    public Vehicule(String name) {
+    public Ingredient(String name) {
         this.name = name;
     }
 

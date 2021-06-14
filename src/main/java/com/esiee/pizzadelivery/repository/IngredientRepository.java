@@ -1,14 +1,14 @@
 package com.esiee.pizzadelivery.repository;
 
-import com.esiee.pizzadelivery.model.Pizza;
+import com.esiee.pizzadelivery.model.Ingredient;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface PizzaRepository extends CrudRepository<Pizza, Long> {
-    public Pizza findByName(String name);
+public interface IngredientRepository extends CrudRepository<Ingredient, Long> {
+    public Ingredient findByName(String name);
     public Long deleteByName(String name);
-    List<Pizza> findAll();
+    List<Ingredient> findAll();
 }

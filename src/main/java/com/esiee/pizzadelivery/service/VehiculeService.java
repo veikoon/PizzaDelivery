@@ -1,6 +1,6 @@
 package com.esiee.pizzadelivery.service;
 
-import com.esiee.pizzadelivery.model.User;
+import com.esiee.pizzadelivery.model.Client;
 import com.esiee.pizzadelivery.model.Vehicule;
 import com.esiee.pizzadelivery.repository.VehiculeRepository;
 import org.springframework.beans.factory.annotation.Autowired;

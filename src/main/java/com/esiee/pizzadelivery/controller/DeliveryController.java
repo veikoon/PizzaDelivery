@@ -1,8 +1,8 @@
 package com.esiee.pizzadelivery.controller;
 
-import com.esiee.pizzadelivery.model.Livraison;
-import com.esiee.pizzadelivery.model.Livreur;
-import com.esiee.pizzadelivery.service.LivraisonService;
+import com.esiee.pizzadelivery.DTO.DeliveryDTO;
+import com.esiee.pizzadelivery.model.Delivery;
+import com.esiee.pizzadelivery.service.DeliveryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +12,22 @@ import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-public class LivraisonController {
+public class DeliveryController {
 
-        private Logger logger = LoggerFactory.getLogger(LivraisonController.class);
+        private Logger logger = LoggerFactory.getLogger(DeliveryController.class);
 
         @Autowired
-        private LivraisonService livraisonService;
+        private DeliveryService deliveryService;
 
         @RequestMapping(value="/livraison/new", method= RequestMethod.POST)
-        public Livraison newLivraison(@RequestBody Livraison livraison) {
+        public Delivery newLivraison(@RequestBody DeliveryDTO deliveryDTO) {
             logger.info("newLivraison()");
-            return livraisonService.newLivraison(livraison);
+            return deliveryService.newLivraison(deliveryDTO);
         }
 
         @RequestMapping(value="/livraison/all", method= RequestMethod.GET)
-        public List<Livraison> findAll() throws Exception {
+        public List<Delivery> findAll() throws Exception {
             logger.info("findAll()");
-            return livraisonService.findAll();
+            return deliveryService.findAll();
         }
 }

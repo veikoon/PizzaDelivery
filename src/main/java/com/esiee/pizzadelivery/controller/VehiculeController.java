@@ -1,6 +1,6 @@
 package com.esiee.pizzadelivery.controller;
 
-import com.esiee.pizzadelivery.model.User;
+import com.esiee.pizzadelivery.model.Client;
 import com.esiee.pizzadelivery.model.Vehicule;
 import com.esiee.pizzadelivery.service.VehiculeService;
 import org.slf4j.Logger;
