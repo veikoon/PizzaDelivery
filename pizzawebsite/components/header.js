@@ -10,7 +10,7 @@ Vue.component('headercomp', {
             <ul id="main-menu">
                 <li id="accueil"><a href="index.html">Accueil</a></li>
                 <li id="produits"><a href="produits.html">Produits</a></li>
-                <li id="livreurs"><a href="livreurs.html">Livreurs</a></li>
+                <li id="livreurs"><a href="livreurs.html">Interne</a></li>
                 <li id="commandes"><a href="livraisons.html">Suivi de commandes</a></li>
                 <li id="Statistiques"><a href="statistiques.html">Statistiques</a></li>
             </ul>

@@ -17,7 +17,7 @@
                 <headercomp></headercomp>
             </div>
             <h2 class="lightfont">
-                Produits
+                Pizza
             </h2>
 
             <div id="produit" class="centering">
@@ -27,7 +27,7 @@
             <div class="new_component">
                 <div class="add_headline">
                     <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
-                
+
                     <div class="add_text">
                         Ajouter une nouvelle pizza
                     </div>
@@ -39,27 +39,63 @@
                             <p>Nom de la pizza
                                 <input type="text" name="nomPizza">
                             </p>
-                            <p>Description de la pizza
-                                <input type="text" name="descPizza">
+                            <p>Ingrédients
+                                <select name="dropdown_ingrédients">
+                                <option value = "Pepperoni">Pepperoni</option>
+                                <option value = "Viande hachée">Viande hachée</option>
+                                <option value = "Mozzarella">Mozzarella</option>
+                                </select>
                             </p>
                             <br>
                         </div>
-                        
-                      
-                       <input name="Ajouter" type="submit" value="Ajouter">
+
+
+                        <input name="Ajouter" type="submit" value="Ajouter">
                         </p>
-                       </form>
+                    </form>
                 </div>
-                
+
             </div>
+            <h2 class="lightfont">
+                Ingrédients
+            </h2>
+            <div id="ingredients" class="centering">
+                <ingredient v-for="ingredient in ingredients" v-bind:key="ingredient.name" v-bind:ingredient='ingredient'></ingredient>
+            </div>
+            <br>
+            <div class="new_component">
+                <div class="add_headline">
+                    <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+
+                    <div class="add_text">
+                        Ajouter un ingrédient
+                    </div>
+                </div>
+                <div class="form_centering">
+                    <form>
+                        <div class="form_content">
+                            <br>
+                            <p>Nom
+                                <input type="text" name="nomPizza">
+                            </p>
+                            <br>
+                        </div>
+
+
+                        <input name="Ajouter" type="submit" value="Ajouter">
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+            <div id="footer">
+                <footercomp></footercomp>
+            </div>
+            <script src="../components/produits.js"></script>
+            <script src="../components/ingrédients.js"></script>
+            <script src="../components/header.js"></script>
+            <script src="../components/footer.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
         </div>
-        <div id="footer">
-            <footercomp></footercomp>
-        </div>
-        <script src="../components/produits.js"></script>
-        <script src="../components/header.js"></script>
-        <script src="../components/footer.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-    </div>
 </body>

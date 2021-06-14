@@ -6,10 +6,18 @@ Vue.component('stat', {
             {{stats.groupe}}
         </div>
         <hr>
-        <table>
+        <table id = "stats">
+        <colgroup>
+        <col span="1" style="width: 100%;">
+        <col span="2" style="width: 100%;">
+        </colgroup>
         <tbody>
-            
-        <div v-for="elem in stats.elements" v-bind:key="elem.nom" v-bind:elem='stats.elements' class="data">
+  
+        <!-- Assigning width of second 
+             column of each row as 60% -->
+        <col style="width: 60%;" />    
+        <div v-for="elem in stats.elements" v-bind:key="elem.nom" v-bind:elem='stats.elements' class="data"
+        width = 100%>
         <tr>
             <td>{{elem.nom}} </td>
             <td>{{elem.data}} </td>

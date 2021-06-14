@@ -10,8 +10,6 @@ Vue.component('livreurs', {
             <br>
                 retards : 
                 {{livreur.retards}}
-                <button>-</button>
-                <button>+</button>
             <div class="remove">
                 <button>Supprimer le livreur</button>
             </div>
