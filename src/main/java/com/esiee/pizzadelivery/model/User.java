@@ -13,17 +13,17 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "nom")
-    private String nom;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "prenom")
-    private String prenom;
+    @Column(name = "surname")
+    private String surname;
 
-    @Column(name = "adresse")
-    private String adresse;
+    @Column(name = "adress")
+    private String adress;
 
-    @Column(name = "telephone")
-    private String telephone;
+    @Column(name = "phone")
+    private String phone;
 
     @Column(name = "login")
     private String login;
@@ -31,57 +31,59 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "portefeuil")
-    private float portefeuil;
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(	name = "user_roles",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
+    @Column(name = "money")
+    private float money;
 
     public User() {
     }
 
-    public User(String nom, String prenom, String adresse, String telephone, String login, String password) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.adresse = adresse;
-        this.telephone = telephone;
+    public User(String name, String surname, String adress, String phone, String login, String password) {
+        this.name = name;
+        this.surname = surname;
+        this.adress = adress;
+        this.phone = phone;
         this.login = login;
         this.password = password;
     }
 
-    public String getNom() {
-        return nom;
+    public Long getId() {
+        return id;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getPrenom() {
-        return prenom;
+    public String getName() {
+        return name;
     }
 
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAdresse() {
-        return adresse;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
-    public String getTelephone() {
-        return telephone;
+    public String getAdress() {
+        return adress;
     }
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
+    public void setAdress(String adress) {
+        this.adress = adress;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getLogin() {
@@ -100,27 +102,11 @@ public class User {
         this.password = password;
     }
 
-    public float getPortefeuil() {
-        return portefeuil;
+    public float getMoney() {
+        return money;
     }
 
-    public void setPortefeuil(float portefeuil) {
-        this.portefeuil = portefeuil;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<Role> role) {
-        this.roles = role;
+    public void setMoney(float money) {
+        this.money = money;
     }
 }

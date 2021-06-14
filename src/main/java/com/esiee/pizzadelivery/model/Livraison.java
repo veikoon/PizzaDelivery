@@ -13,7 +13,6 @@ public class Livraison {
     @Column(name = "id")
     private Long id;
 
-
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name="livreur", nullable=true)
     private Livreur livreur;
