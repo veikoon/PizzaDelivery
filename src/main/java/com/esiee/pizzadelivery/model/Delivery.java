@@ -1,16 +1,18 @@
 package com.esiee.pizzadelivery.model;
 
+import org.hibernate.annotations.DynamicInsert;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
+@DynamicInsert
 @Table(name = "Delivery")
 public class Delivery {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -26,7 +28,7 @@ public class Delivery {
     @JoinColumn(name="vehicule", nullable = false)
     private Vehicule vehicule;
 
-    @Column(name = "date", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name = "date", columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
 
     @Column(name = "isLate", nullable = false, columnDefinition="boolean default false")
