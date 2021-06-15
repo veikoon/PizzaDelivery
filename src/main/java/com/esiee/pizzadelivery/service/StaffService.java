@@ -13,7 +13,7 @@ public class StaffService {
     @Autowired
     private StaffRepository staffRepository;
 
-    public Staff newLivreur(Staff staff){
+    public Staff newStaff(Staff staff){
         staffRepository.save(staff);
         return staff;
     }

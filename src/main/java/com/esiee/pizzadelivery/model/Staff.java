@@ -63,14 +63,6 @@ public class Staff {
         this.surname = surname;
     }
 
-    public String getAdress() {
-        return address;
-    }
-
-    public void setAdress(String address) {
-        this.address = address;
-    }
-
     public String getPhone() {
         return phone;
     }
@@ -79,19 +71,27 @@ public class Staff {
         this.phone = phone;
     }
 
-    public int getRetard() {
-        return nbDelay;
-    }
-
-    public void setRetard(int nbDelay) {
-        this.nbDelay = nbDelay;
-    }
-
     public int getAge() {
         return age;
     }
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public int getNbDelay() {
+        return nbDelay;
+    }
+
+    public void setNbDelay(int nbDelay) {
+        this.nbDelay = nbDelay;
     }
 }

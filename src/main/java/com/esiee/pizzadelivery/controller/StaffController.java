@@ -20,9 +20,8 @@ public class StaffController {
 
         @RequestMapping(value="/staff/new", method= RequestMethod.POST)
         public Staff newLivreur(@RequestBody Staff staff) {
-            logger.info("newLivreur()");
-            logger.info("name :" + staff.getName());
-            return staffService.newLivreur(staff);
+            logger.info("newStaff()");
+            return staffService.newStaff(staff);
         }
 
         @RequestMapping(value="/staff/delete", method= RequestMethod.DELETE)
