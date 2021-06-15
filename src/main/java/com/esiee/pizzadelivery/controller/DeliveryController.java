@@ -2,6 +2,7 @@ package com.esiee.pizzadelivery.controller;
 
 import com.esiee.pizzadelivery.DTO.DeliveryDTO;
 import com.esiee.pizzadelivery.model.Delivery;
+import com.esiee.pizzadelivery.model.Pizza;
 import com.esiee.pizzadelivery.service.DeliveryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,5 +30,17 @@ public class DeliveryController {
         public List<Delivery> findAll() throws Exception {
             logger.info("findAll()");
             return deliveryService.findAll();
+        }
+
+        @RequestMapping(value="/delivery/delete", method= RequestMethod.DELETE)
+        public void deleteDelivery(@RequestParam Long id) {
+            logger.info("deleteDelivery()");
+            deliveryService.deleteDelivery(id);
+        }
+
+        @RequestMapping(value="/delivery", method= RequestMethod.GET)
+        public Delivery findDelivery(@RequestParam Long id){
+            logger.info("findDelivery()");
+            return deliveryService.findByID(id);
         }
 }

@@ -29,4 +29,17 @@ public class IngredientController {
             logger.info("findAll()");
             return ingredientService.findAll();
         }
+
+        @RequestMapping(value="/ingredient/delete", method= RequestMethod.DELETE)
+        public boolean deleteIngredient(@RequestParam String name) {
+            logger.info("deleteIngredient()");
+            ingredientService.deleteIngredient(name);
+            return true;
+        }
+    
+        @RequestMapping(value="/ingredient", method= RequestMethod.GET)
+        public Ingredient findIngredient(@RequestParam String name){
+            logger.info("findIngredient()");
+            return ingredientService.findByName(name);
+        }
 }

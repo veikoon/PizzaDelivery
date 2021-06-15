@@ -42,4 +42,12 @@ public class DeliveryService {
         Delivery delivery = new Delivery(staff, client, vehicule, deliveryDTO.isRetard(), pizza, size);
         return deliveryRepository.save(delivery);
     }
+
+    public Delivery findByID(Long id){
+        return deliveryRepository.findById(id).orElseThrow();
+    }
+
+    public void deleteDelivery(Long id){
+        deliveryRepository.delete(findByID(id));
+    }
 }

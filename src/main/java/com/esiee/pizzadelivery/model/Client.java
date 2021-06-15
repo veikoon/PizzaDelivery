@@ -13,7 +13,7 @@ public class Client {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique=true)
     private String name;
 
     @Column(name = "surname", nullable = false)
@@ -84,19 +84,11 @@ public class Client {
         this.phone = phone;
     }
 
-    public float getMoney() {
+    public float getBalance() {
         return balance;
     }
 
-    public void setMoney(float money) {
-        this.balance = money;
-    }
-
-    public float getSolde() {
-        return balance;
-    }
-
-    public void setSolde(float balance) {
+    public void setBalance(float balance) {
         this.balance = balance;
     }
 
@@ -108,11 +100,11 @@ public class Client {
         this.totalFacturation = totalFacturation;
     }
 
-    public int getNbCommande() {
+    public int getNbOrder() {
         return nbOrder;
     }
 
-    public void setNbCommande(int nbOrder) {
+    public void setNbOrder(int nbOrder) {
         this.nbOrder = nbOrder;
     }
 }

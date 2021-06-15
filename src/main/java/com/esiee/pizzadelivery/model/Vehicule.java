@@ -11,14 +11,10 @@ public class Vehicule {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique=true)
     private String name;
 
     public Vehicule() {
-    }
-
-    public Vehicule(String name) {
-        this.name = name;
     }
 
     public Long getId() {

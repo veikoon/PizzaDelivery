@@ -11,7 +11,7 @@ public class Staff {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique=true)
     private String name;
 
     @Column(name = "surname", nullable = false)
@@ -63,22 +63,6 @@ public class Staff {
         this.surname = surname;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -87,11 +71,27 @@ public class Staff {
         this.address = address;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public int getNbDelay() {
         return nbDelay;
     }
 
     public void setNbDelay(int nbDelay) {
         this.nbDelay = nbDelay;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

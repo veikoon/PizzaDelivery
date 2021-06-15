@@ -11,7 +11,7 @@ public class Size {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name", nullable = false, unique=true)
     private String name;
 
     @Column(name = "price", nullable = false)
@@ -26,6 +26,14 @@ public class Size {
         this.price = price;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -34,11 +42,11 @@ public class Size {
         this.name = name;
     }
 
-    public float getprice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setprice(float price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 }
