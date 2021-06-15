@@ -16,31 +16,31 @@ public class ClientController {
         private Logger logger = LoggerFactory.getLogger(ClientController.class);
 
         @Autowired
-        private ClientService userService;
+        private ClientService clientService;
 
-        @RequestMapping(value="/user/new", method= RequestMethod.POST)
-        public Client newClient(@RequestBody Client user) {
+        @RequestMapping(value="/client/new", method= RequestMethod.POST)
+        public Client newClient(@RequestBody Client client) {
             logger.info("newClient()");
-            logger.info("name :" + user.getName());
-            return userService.newClient(user);
+            logger.info("name :" + client.getName());
+            return clientService.newClient(client);
         }
 
-        @RequestMapping(value="/user/delete", method= RequestMethod.DELETE)
+        @RequestMapping(value="/client/delete", method= RequestMethod.DELETE)
         public boolean deleteClient(@RequestParam String name) {
             logger.info("deleteClient()");
-            userService.deleteClient(name);
+            clientService.deleteClient(name);
             return true;
         }
 
-        @RequestMapping(value="/user", method= RequestMethod.GET)
+        @RequestMapping(value="/client", method= RequestMethod.GET)
         public Client findClient(@RequestParam String name) throws Exception {
             logger.info("findClient()");
-            return userService.findByName(name);
+            return clientService.findByName(name);
         }
 
-        @RequestMapping(value="/user/all", method= RequestMethod.GET)
+        @RequestMapping(value="/client/all", method= RequestMethod.GET)
         public List<Client> findAll() throws Exception {
             logger.info("findAll()");
-            return userService.findAll();
+            return clientService.findAll();
         }
 }

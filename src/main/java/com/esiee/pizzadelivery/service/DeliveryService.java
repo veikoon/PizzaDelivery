@@ -26,16 +26,20 @@ public class DeliveryService {
     @Autowired
     private PizzaService pizzaService;
 
+    @Autowired
+    private SizeService sizeService;
+
     public List<Delivery> findAll(){
         return deliveryRepository.findAll();
     }
 
-    public Delivery newLivraison(DeliveryDTO deliveryDTO){
+    public Delivery newDelivery(DeliveryDTO deliveryDTO){
         Client client = clientService.findByName(deliveryDTO.getClient());
         Staff staff = staffService.findByName(deliveryDTO.getLivreur());
         Vehicule vehicule = vehiculeService.findByName(deliveryDTO.getVehicule());
         Pizza pizza  = pizzaService.findByName(deliveryDTO.getPizza());
-        Delivery delivery = new Delivery(staff, client, vehicule, deliveryDTO.isRetard(), pizza);
+        Size size = sizeService.findByName(deliveryDTO.getSize());
+        Delivery delivery = new Delivery(staff, client, vehicule, deliveryDTO.isRetard(), pizza, size);
         return deliveryRepository.save(delivery);
     }
 }

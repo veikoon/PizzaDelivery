@@ -26,8 +26,7 @@ public class Delivery {
     @JoinColumn(name="vehicule", nullable = false)
     private Vehicule vehicule;
 
-    @CreatedDate
-    @Column(name = "date")
+    @Column(name = "date", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date date;
 
     @Column(name = "isLate", nullable = false, columnDefinition="boolean default false")
@@ -37,11 +36,19 @@ public class Delivery {
     @JoinColumn(name = "pizza", nullable = false)
     private Pizza pizza;
 
-    public Delivery(Staff staff, Client client, Vehicule vehicule, boolean isLate, Pizza pizza) {
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "size", nullable = false)
+    private Size size;
+
+    public Delivery(Staff staff, Client client, Vehicule vehicule, boolean isLate, Pizza pizza, Size size) {
         this.staff = staff;
         this.client = client;
         this.vehicule = vehicule;
         this.isLate = isLate;
         this.pizza = pizza;
+        this.size = size;
+    }
+
+    public Delivery() {
     }
 }

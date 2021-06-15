@@ -13,6 +13,7 @@ public class DeliveryDTO {
     private boolean isLate;
     private String pizza;
     private float prix;
+    private String size;
 
     public DeliveryDTO() {
     }
@@ -65,5 +66,27 @@ public class DeliveryDTO {
         this.prix = prix;
     }
 
+    public String getStaff() {
+        return staff;
+    }
 
+    public void setStaff(String staff) {
+        this.staff = staff;
+    }
+
+    public boolean isLate() {
+        return isLate;
+    }
+
+    public void setLate(boolean late) {
+        isLate = late;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 }

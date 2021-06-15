@@ -36,13 +36,12 @@ public class PizzaService {
     }
 
     public Pizza newPizza(PizzaDTO pizzaDTO){
-        Size size = sizeService.findByName(pizzaDTO.getSize());
         List<Ingredient> ingredients = new ArrayList<Ingredient>();
         for (String ingredient: pizzaDTO.getIngredients()
              ) {
             ingredients.add(ingredientService.findByName(ingredient));
         }
-        Pizza pizza = new Pizza(pizzaDTO.getName(), size, ingredients);
+        Pizza pizza = new Pizza(pizzaDTO.getName(), ingredients);
         return pizzaRepository.save(pizza);
     }
 

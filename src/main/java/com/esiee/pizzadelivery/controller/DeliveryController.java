@@ -19,13 +19,13 @@ public class DeliveryController {
         @Autowired
         private DeliveryService deliveryService;
 
-        @RequestMapping(value="/livraison/new", method= RequestMethod.POST)
-        public Delivery newLivraison(@RequestBody DeliveryDTO deliveryDTO) {
-            logger.info("newLivraison()");
-            return deliveryService.newLivraison(deliveryDTO);
+        @RequestMapping(value="/delivery/new", method= RequestMethod.POST)
+        public Delivery newdelivery(@RequestBody DeliveryDTO deliveryDTO) {
+            logger.info("newdelivery()");
+            return deliveryService.newDelivery(deliveryDTO);
         }
 
-        @RequestMapping(value="/livraison/all", method= RequestMethod.GET)
+        @RequestMapping(value="/delivery/all", method= RequestMethod.GET)
         public List<Delivery> findAll() throws Exception {
             logger.info("findAll()");
             return deliveryService.findAll();

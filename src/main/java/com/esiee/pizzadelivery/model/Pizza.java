@@ -16,18 +16,16 @@ public class Pizza {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "size", nullable = false)
-    private Size size;
-
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "ingredients", nullable = false)
     private List<Ingredient> ingredients;
 
-    public Pizza(String name, Size size, List<Ingredient> ingredients) {
+    public Pizza(String name, List<Ingredient> ingredients) {
         this.name = name;
-        this.size = size;
         this.ingredients = ingredients;
+    }
+
+    public Pizza() {
     }
 
     public Long getId() {
@@ -44,14 +42,6 @@ public class Pizza {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Size getTaille() {
-        return size;
-    }
-
-    public void setTaille(Size size) {
-        this.size = size;
     }
 
     public List<Ingredient> getIngredients() {

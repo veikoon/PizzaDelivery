@@ -14,16 +14,16 @@ public class Size {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "prix", nullable = false)
-    private float prix;
+    @Column(name = "price", nullable = false)
+    private float price;
 
     public Size(){
 
     }
 
-    public Size(String name, int prix) {
+    public Size(String name, int price) {
         this.name = name;
-        this.prix = prix;
+        this.price = price;
     }
 
     public String getName() {
@@ -34,11 +34,11 @@ public class Size {
         this.name = name;
     }
 
-    public float getPrix() {
-        return prix;
+    public float getprice() {
+        return price;
     }
 
-    public void setPrix(float prix) {
-        this.prix = prix;
+    public void setprice(float price) {
+        this.price = price;
     }
 }
