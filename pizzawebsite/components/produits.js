@@ -31,11 +31,25 @@ Vue.component('produit', {
 var app = new Vue({
     el: '#produit',
     data: {
-        produits: [
-            { nomPizza: "La Pepperoni", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Pepperoni et mozzarella."},
-            { nomPizza: "La Forestière", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Jambon, mozzarella, champignon, poivre."},
-            { nomPizza: "La Végétarienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Tomates, mozzarella, olives, basilic, poivre."},
-            { nomPizza: "La Hawaiienne", prixNaine: 5, prixHumaine: 13, prixOgresque: 20, descPizza: "Jambon, mozzarella, Ananas."}
-        ]
+        produits: []
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/pizza/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(pizza => {
+                console.log(pizza);
+                console.log(pizza.length);
+                for (let i = 0; pizza.length; i++) {
+                    this.produits.push({
+                        nomPizza: pizza[i].name,
+                        id: pizza[i].id
+                    })
+                }
+            });
+        })
     }
 })
