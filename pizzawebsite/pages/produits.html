@@ -37,20 +37,19 @@
                         <div class="form_content">
                             <br>
                             <p>Nom de la pizza
-                                <input type="text" name="nomPizza">
+                                <input type="text" name="nomPizza" id="pizzaname">
                             </p>
-                            <p>Ingrédients
-                                <select name="dropdown_ingrédients">
-                                <option value = "Pepperoni">Pepperoni</option>
-                                <option value = "Viande hachée">Viande hachée</option>
-                                <option value = "Mozzarella">Mozzarella</option>
+                            <div id="ingredientsdropdown"> Ingrédient
+                                <select v-model="ingredients" id="ingredientList">
+                                    <option v-for="ingredient in ingredients" v-bind:value="ingredient.id">
+                                        {{ingredient.name}}
+                                    </option>
                                 </select>
-                            </p>
+                            </div>
                             <br>
                         </div>
 
-
-                        <input name="Ajouter" onclick="addpizza()" type="submit" value="Ajouter">
+                        <input name="Ajouter" onclick="addpizza(document.getElementById('pizzaname').value)" type="submit" value="Ajouter">
                         </p>
                     </form>
                 </div>
@@ -60,7 +59,7 @@
                 Ingrédients
             </h2>
             <div id="ingredients" class="centering">
-                <ingredient v-for="ingredient in ingredients" v-bind:key="ingredient.name" v-bind:ingredient='ingredient'></ingredient>
+                <ingredient v-for="ingredient in ingredients" v-bind:key="ingredient.id" v-bind:ingredient='ingredient'></ingredient>
             </div>
             <br>
             <div class="new_component">
@@ -76,13 +75,13 @@
                         <div class="form_content">
                             <br>
                             <p>Nom
-                                <input type="text" name="nomPizza">
+                                <input type="text" id="ingredientname" name="nomPizza">
                             </p>
                             <br>
                         </div>
 
 
-                        <input name="Ajouter" type="submit" value="Ajouter">
+                        <input name="Ajouter" onclick="addingredient(document.getElementById('ingredientname').value)" type="submit" value="Ajouter">
                         </p>
                     </form>
                 </div>
@@ -94,6 +93,7 @@
             <script src="../components/produits.js"></script>
             <script src="../scripts/postfunctions.js"></script>
             <script src="../components/ingrédients.js"></script>
+            <script src="../components/ingrédientsdropdown.js"></script>
             <script src="../components/header.js"></script>
             <script src="../components/footer.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>

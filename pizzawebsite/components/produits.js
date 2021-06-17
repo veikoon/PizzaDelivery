@@ -41,9 +41,8 @@ var app = new Vue({
             fetchpromise.then(response => {
                 return response.json();
             }).then(pizza => {
-                console.log(pizza);
-                console.log(pizza.length);
-                for (let i = 0; pizza.length; i++) {
+                for (let i = 0; i < pizza.length; i++) {
+                    console.log(i);
                     this.produits.push({
                         nomPizza: pizza[i].name,
                         id: pizza[i].id

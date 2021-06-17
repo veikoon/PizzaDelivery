@@ -1,20 +1,8 @@
-Vue.component('ingredient', {
-    props: ['ingredient'],
-    template: `
-    <div class="ingredientcomponent">
-        <div class = "name">
-            {{ingredient.name}}
-        </div>
-    </div>`
-})
-
 var app = new Vue({
-    el: '#ingredients',
+    el: '#ingredientsdropdown',
     selected: 1,
-    data: function() {
-        return {
-            ingredients: []
-        }
+    data: {
+        ingredients: []
     },
     mounted: function() {
         this.$nextTick(function() {
