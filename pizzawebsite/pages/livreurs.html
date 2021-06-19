@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <!--script type="text/javascript">
+        window.onbeforeunload = function() {
+            return "Dude, are you sure you want to leave? Think of the kittens!";
+        }
+    </script-->
     <div id="main">
         <div id="header">
             <headercomp></headercomp>
@@ -19,7 +24,7 @@
         <img src="../resources/funny-pizza-delivery-guy-vector-id997163114.png" class="pizzaguy">
         <div>
             <div id="app">
-                <livreurs v-for="livreur in livreursid" v-bind:key="livreur.id" v-bind:livreur='livreur'></livreurs>
+                <livreurs v-for="livreur in livreurs" v-bind:key="livreur.id" v-bind:livreur='livreur'></livreurs>
             </div>
         </div>
         <div class="new_component">
@@ -34,20 +39,26 @@
                 <form>
                     <div class="form_content">
                         <br>
-                        <p>Nom du livreur
-                            <input type="text" name="nomLivreur">
+                        <p>Nom
+                            <input type="text" id="nomLivreur">
                         </p>
-                        <p>Age du livreur
-                            <input type="int" name="ageLivreur">
+                        <p>Prenom
+                            <input type="text" id="prenomLivreur">
                         </p>
-                        <p>Retards du livreur
-                            <input type="float" name="retardLivreur">
+                        <p>Age
+                            <input type="int" id="ageLivreur">
+                        </p>
+                        <p>Telephone
+                            <input type="float" id="telephoneLivreur">
+                        </p>
+                        <p>Adresse
+                            <input type="float" id="adresseLivreur">
                         </p>
                         <br>
                     </div>
 
 
-                    <input name="Ajouter" type="submit" value="Ajouter">
+                    <input name="Ajouter" onclick="addlivreur()" type="submit" value="Ajouter">
                     </p>
                 </form>
             </div>
@@ -69,28 +80,55 @@
                 <form>
                     <div class="form_content">
                         <br>
-                        <p>Nom du client
-                            <input type="text" name="nomClient">
+                        <p>Nom
+                            <input type="text" id="nomClient">
                         </p>
-                        <p>Prenom du client
-                            <input type="text" name="prenomClient">
+                        <p>Prenom
+                            <input type="text" id="prenomClient">
                         </p>
-                        <p>Adresse du client
-                            <input type="int" name="ageLivreur">
+                        <p>Age
+                            <input type="text" id="ageClient">
+                        </p>
+                        <p>Telephone
+                            <input type="text" id="telephoneClient">
+                        </p>
+                        <p>Adresse
+                            <input type="int" id="adresseClient">
                         </p>
                         <br>
                     </div>
 
 
-                    <input name="Ajouter" type="submit" value="Ajouter">
+                    <input name="Ajouter" onclick="addclient()" type="submit" value="Ajouter">
                     </p>
                 </form>
             </div>
 
         </div>
+        <h2 class="lightfont">Vehicules</h2>
+        <div id="vehicule">
+            <vehicules v-for="vehicule in vehicules" v-bind:key="vehicule.id" v-bind:vehicule='vehicule'></vehicules>
+        </div>
+
+        <div class="form_centering">
+            <form>
+                <div class="form_content">
+                    <br>
+                    <p>Vehicule
+                        <input type="text" id="nomVehicule">
+                    </p>
+                    <br>
+                </div>
+
+                <input name="Ajouter" onclick="addvehicules(document.getElementById('nomVehicule').value)" type="submit" value="Ajouter">
+                </p>
+            </form>
+        </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
+        <script src="../scripts/postfunctions.js"></script>
+        <script src="../components/vehicule.js"></script>
         <script src="../components/livreurs.js"></script>
         <script src="../components/clients.js"></script>
         <script src="../components/header.js"></script>

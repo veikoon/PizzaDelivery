@@ -15,11 +15,6 @@
         <div id="header">
             <headercomp></headercomp>
         </div>
-        <h2 class="lightfont">Commandes</h2>
-        <div id="commande">
-            <commande v-for="commande in commandes" v-bind:key="commande.id" v-bind:commande='commande'>
-                </livraison>
-        </div>
         <h2 class="lightfont">Livraisons</h2>
         <div id="livraison">
             <livraison v-for="livraison in livraisons" v-bind:key="livraison.id" v-bind:livraison='livraison'></livraison>
@@ -39,20 +34,20 @@
                         <p>ID de la livraison
                             <input type="int" name="idLivraison">
                         </p>
-                        <p>Livreur
-                            <select name="dropdown_livreurs">
-                                <option value = "Alex">Alex</option>
-                                <option value = "Vincent">Vincent</option>
-                                <option value = "Cathy">Cathy</option>
-                                </select>
-                        </p>
-                        <p>Véhicule
-                            <select name="dropdown_vehicules">
-                                <option value = "voiture_1">voiture 1</option>
-                                <option value = "voiture_2">voiture 2</option>
-                                <option value = "voiture_3">voiture 3</option>
-                                </select>
-                        </p>
+                        <div id="livreursdropdown"> Livreur
+                            <select v-model="selected">
+                                <option v-for="livreur in livreurs" v-bind:value="livreur.id">
+                                    {{livreur.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div id="vehiculesdropdown"> Vehicule
+                            <select v-model="selected">
+                                <option v-for="vehicule in vehicules" v-bind:value="vehicule.id">
+                                    {{vehicule.name}}
+                                </option>
+                            </select>
+                        </div>
                         <br>
                     </div>
 
@@ -67,6 +62,7 @@
             <footercomp></footercomp>
         </div>
         <script src="../components/livraisons.js"></script>
+        <script src="../components/dropdowns_data.js"></script>
         <script src="../components/commandes.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>

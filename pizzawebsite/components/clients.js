@@ -3,16 +3,17 @@ Vue.component('clients', {
     template: `
     <div class="clientscomponent">
         <div class = "name">
-            {{client.prenom}} {{client.nom}}
+            {{client.name}} {{client.surname}}
         </div>
-        Id:
-        {{client.id}}
         <br>
         Adresse:
-        {{client.adresse}}
+        {{client.address}}
+        <br>
+        Commandes:
+        {{client.order}}
         <br>
         Solde:
-        {{client.solde}}
+        {{client.balance}}
         <br>
         Facturation:
         {{client.facturation}}
@@ -26,13 +27,31 @@ Vue.component('clients', {
 var app = new Vue({
     el: '#clients',
     data: {
-        clients: [
-            { id: 1, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LAMORLAY", telephone: "0651603940", solde: "100", facturation: "130" },
-            { id: 2, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LAMORLAY", telephone: "0651603940", solde: "100", facturation: "130" },
-            { id: 3, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LAMORLAY", telephone: "0651603940", solde: "100", facturation: "130" },
-            { id: 4, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LAMORLAY", telephone: "0651603940", solde: "100", facturation: "130" },
-            { id: 5, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LE MARLAY", telephone: "0651603940", solde: "100", facturation: "130" },
-            { id: 6, prenom: "jean-bolo", nom: "okok", adresse: "146 avenue charles de gaulle, 24 résidence de la canarie, 60260 LE MARLAY", telephone: "0651603940", solde: "100", facturation: "130" }
-        ]
+        clients: []
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/client/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(client => {
+                for (let i = 0; i < client.length; i++) {
+                    console.log(client[i].name);
+                    this.clients.push({
+                        id: client[i].id,
+                        name: client[i].name,
+                        surname: client[i].surname,
+                        age: client[i].age,
+                        address: client[i].address,
+                        phone: client[i].phone,
+                        balance: client[i].balance,
+                        facturation: client[i].totalFacturation,
+                        order: client[i].nbOrder
+                    })
+                }
+            });
+        })
     }
 })

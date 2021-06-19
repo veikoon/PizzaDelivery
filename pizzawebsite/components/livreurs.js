@@ -3,15 +3,21 @@ Vue.component('livreurs', {
     template: `
     <div class="livreurcomponent">
         <div class = "name">
-            {{livreur.name}}
+            <p id="staffname">{{livreur.name}}</p> {{livreur.surname}}
         </div>
             age:
             {{livreur.age}}
             <br>
-                retards : 
-                {{livreur.retards}}
+            retards : 
+            {{livreur.retard}}
+            <br>
+            phone : 
+            {{livreur.phone}}
+            <br>
+            adresse : 
+            {{livreur.address}}
             <div class="remove">
-                <button>Supprimer le livreur</button>
+                <button onclick="deletelivreur(document.getElementById('staffname').value)">Supprimer le livreur</button>
             </div>
         </div>
     </div>`
@@ -20,13 +26,31 @@ Vue.component('livreurs', {
 var app = new Vue({
     el: '#app',
     data: {
-        livreursid: [
-            { id: 1, name: "Luc", age: 22, retards: 0 },
-            { id: 2, name: "Alex", age: 22, retards: 4 },
-            { id: 3, name: "Lucy", age: 22, retards: 7 },
-            { id: 4, name: "Vincent", age: 22, retards: 7 },
-            { id: 5, name: "Sami", age: 22, retards: 7 },
-            { id: 6, name: "Hamady", age: 22, retards: 7 }
-        ]
+        livreurs: []
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/staff/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(staff => {
+                for (let i = 0; i < staff.length; i++) {
+                    console.log(staff[i].name);
+                    this.livreurs.push({
+                        id: staff[i].id,
+                        name: staff[i].name,
+                        surname: staff[i].surname,
+                        retard: staff[i].nbDelay,
+                        age: staff[i].age,
+                        address: staff[i].address,
+                        phone: staff[i].phone,
+
+
+                    })
+                }
+            });
+        })
     }
 })

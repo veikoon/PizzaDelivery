@@ -5,10 +5,13 @@ Vue.component('produit', {
         <div class="texte">
             <div class="nom_pizza">
                 <h1>
-                    <font color="black">{{produit.nomPizza}}</font>
+                    <font color="black" id="nompizza">{{produit.nomPizza}}</font>
                 </h1>
             </div>
             <div class="basic_info">
+                <div class="ingredients" v-for="ingredient in produit.ingredients" v-bind:value="ingredient.id">
+                {{ingredient.name}},
+                </div> <br>
                 <div class="prix">
                     <ul id="taille">
                         <li id="naine">Naine....................{{produit.prixNaine}}€</li>
@@ -23,7 +26,7 @@ Vue.component('produit', {
             </div>
         </div>
         <div class="remove">
-            <button>Supprimer la pizza</button>
+            <button onclick="deletepizza()">Supprimer la pizza</button>
         </div>
     </div>`
 })
@@ -45,7 +48,8 @@ var app = new Vue({
                     console.log(i);
                     this.produits.push({
                         nomPizza: pizza[i].name,
-                        id: pizza[i].id
+                        id: pizza[i].id,
+                        ingredients: pizza[i].ingredients
                     })
                 }
             });

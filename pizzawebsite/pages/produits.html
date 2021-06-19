@@ -40,7 +40,7 @@
                                 <input type="text" name="nomPizza" id="pizzaname">
                             </p>
                             <div id="ingredientsdropdown"> Ingrédient
-                                <select v-model="ingredients" id="ingredientList">
+                                <select v-model="selected" id="ingredientList">
                                     <option v-for="ingredient in ingredients" v-bind:value="ingredient.id">
                                         {{ingredient.name}}
                                     </option>
@@ -93,7 +93,7 @@
             <script src="../components/produits.js"></script>
             <script src="../scripts/postfunctions.js"></script>
             <script src="../components/ingrédients.js"></script>
-            <script src="../components/ingrédientsdropdown.js"></script>
+            <script src="../components/dropdowns_data.js"></script>
             <script src="../components/header.js"></script>
             <script src="../components/footer.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>

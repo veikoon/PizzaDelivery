@@ -27,13 +27,29 @@ Vue.component('livraison', {
 var app = new Vue({
     el: '#livraison',
     data: {
-        livraisons: [
-            { id: 1, livreur: "Luc", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
-            { id: 2, livreur: "Alex", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
-            { id: 3, livreur: "Lucy", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
-            { id: 4, livreur: "Vincent", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
-            { id: 5, livreur: "Sami", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 },
-            { id: 6, livreur: "Hamady", pizza: "4 fromages", vehicule: 22, date: "05/04/21", retards: 0 }
-        ]
+        livraisons: []
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/delivery/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(delivery => {
+                for (let i = 0; i < delivery.length; i++) {
+                    console.log(i);
+                    this.livraisons.push({
+                        id: delivery[i].id,
+                        livreur: delivery[i].name,
+                        client: delivery[i].client,
+                        vehicule: delivery[i].vehicule,
+                        date: delivery[i].date,
+                        pizza: delivery[i].pizza,
+                        size: delivery[i].size
+                    })
+                }
+            });
+        })
     }
 })
