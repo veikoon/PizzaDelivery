@@ -50,4 +50,8 @@ public class DeliveryService {
     public void deleteDelivery(Long id){
         deliveryRepository.delete(findByID(id));
     }
+
+    public void setLate(Long id, boolean isLate){
+        deliveryRepository.setDeliveryLate(id,isLate);
+    }
 }

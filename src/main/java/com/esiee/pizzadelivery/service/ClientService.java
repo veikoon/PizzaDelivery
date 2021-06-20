@@ -29,4 +29,12 @@ public class ClientService {
     public List<Client> findAll(){
         return userRepository.findAll();
     }
+
+    public void setTotal(String name, float total){
+        userRepository.setTotal(name,total);
+    }
+
+    public void setBalance(String name, float balance){
+        userRepository.setBalance(name,balance);
+    }
 }

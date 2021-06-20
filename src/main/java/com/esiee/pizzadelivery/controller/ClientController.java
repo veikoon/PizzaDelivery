@@ -43,4 +43,16 @@ public class ClientController {
             logger.info("findAll()");
             return clientService.findAll();
         }
+
+        @RequestMapping(value="/client/balance", method= RequestMethod.POST)
+        public void setBalance(@RequestParam String name, @RequestParam float balance) throws Exception {
+            logger.info("setBalance()");
+            clientService.setBalance(name, balance);
+        }
+
+        @RequestMapping(value="/client/total", method= RequestMethod.POST)
+        public void setTotalFacturation(@RequestParam String name, @RequestParam float total) throws Exception {
+            logger.info("setTotalFacturation()");
+            clientService.setTotal(name, total);
+        }
 }

@@ -43,4 +43,10 @@ public class DeliveryController {
             logger.info("findDelivery()");
             return deliveryService.findByID(id);
         }
+
+        @RequestMapping(value="/delivery/islate", method= RequestMethod.POST)
+        public void setLate(@RequestParam Long id, @RequestParam boolean late){
+            logger.info("setLate()");
+            deliveryService.setLate(id, late);
+        }
 }
