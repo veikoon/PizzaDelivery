@@ -126,6 +126,27 @@ function addvehicules(name) {
 }
 
 function adddelivery() {
+    var client = document.getElementById("clientsdropdown").value;
+    console.log("entering function");
+    let nb_deliveries = 0;
+    const fetchpromise = fetch("http://localhost:8080/delivery/all");
+    fetchpromise.then(response => {
+        return response.json();
+    }).then(orders => {
+        var result = {};
+        orders.forEach(function(elem) {
+            console.log(elem);
+            if (elem.client.name === client) {
+                nb_deliveries++;
+            }
+        });
+        console.log("deliveries");
+        console.log(nb_deliveries);
+    });
+    if (nb_deliveries % 10 == true) {
+        let cost = 0;
+    }
+
     console.log(document.getElementById("livreursdropdown").value);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
