@@ -137,48 +137,51 @@ function adddelivery() {
     }).then(size => {
         console.log(size);
         price = size.price;
-    });
-
-    fetchpromise = fetch("http://localhost:8080/client?name=" + client)
-    fetchpromise.then(response => {
-        return response.json();
-    }).then(client => {
-        console.log(client);
-        if (client.balance > price) {
-            newbalance = client.balance - price;
-            console.log(client.balance);
-            console.log(price);
-            console.log(newbalance);
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-            fetch("http://localhost:8080/delivery/new", {
-                    method: "POST",
-                    headers: myHeaders,
-                    body: JSON.stringify({
-                        "staff": document.getElementById("livreursdropdown").value,
-                        "client": document.getElementById("clientsdropdown").value,
-                        "vehicule": document.getElementById("vehiculesdropdown").value,
-                        "pizza": document.getElementById("pizzasdropdown").value,
-                        "size": document.getElementById("sizesdropdown").value,
-                    })
-                })
-                .then(response => {
-                    console.log("soustraction balance");
-                    console.log(newbalance);
-                    console.log(response.json())
-                    var myHeaders = new Headers();
-                    myHeaders.append("Content-Type", "application/json");
-                    fetch("http://localhost:8080/client/balance?name=" + client.name + "&balance=" + newbalance, {
+        fetchpromise = fetch("http://localhost:8080/client?name=" + client)
+        fetchpromise.then(response => {
+            return response.json();
+        }).then(client => {
+            console.log(client);
+            if (client.balance > price) {
+                newbalance = client.balance - price;
+                console.log(client.balance);
+                console.log(price);
+                console.log(newbalance);
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                fetch("http://localhost:8080/delivery/new", {
                         method: "POST",
-                        headers: myHeaders
+                        headers: myHeaders,
+                        body: JSON.stringify({
+                            "staff": document.getElementById("livreursdropdown").value,
+                            "client": document.getElementById("clientsdropdown").value,
+                            "vehicule": document.getElementById("vehiculesdropdown").value,
+                            "pizza": document.getElementById("pizzasdropdown").value,
+                            "size": document.getElementById("sizesdropdown").value,
+                        })
                     })
-                })
-                .catch(error => console.log("Erreur: " + error));
+                    .then(response => {
+                        console.log("soustraction balance");
+                        console.log(newbalance);
+                        console.log(response.json())
+                        var myHeaders = new Headers();
+                        myHeaders.append("Content-Type", "application/json");
+                        fetch("http://localhost:8080/client/balance?name=" + client.name + "&balance=" + newbalance, {
+                            method: "POST",
+                            headers: myHeaders
+                        })
+                    }).then(response => {
+                        console.log(response);
+                    })
+                    .catch(error => console.log("Erreur: " + error));
 
-        } else {
-            alert("balance insuffisante");
-        }
+            } else {
+                alert("balance insuffisante");
+            }
+        });
     });
+
+
     /*
 
         console.log(document.getElementById("livreursdropdown").value);
