@@ -35,6 +35,10 @@ La partie vu est réalisé en JavaScript et ne nécessite qu'un navigateur.
 
     Un fois la table crée merci de renseigner vos informations dans le fichier application.properties --> src/main/resources/application.properties
 
+    Vous avez la possibilité de lancer les scripts de création et d'insertion de données sql qui se trouvent dans assets/ pour avoir des valeurs initiales. 
+
+    NEANMOINS sachez que vous pouvez uniquement créer la Database et ensuite lancer le controller JAVA la base de donné se contruira d'elle même !
+
 2.  Build et empactage du controller 
 
     Rendez vous à la racide du projet et lancez la commande:
@@ -58,4 +62,6 @@ Ensuite rendez vous dans le dossier pizzawebsite\pages et ouvrez la page index.h
 
 Vous devriez déssormais pouvoir manipuler vos commandes selon vos envies.
 
-Un Swagger est disponible à l'adresse suivante http://localhost:8080/swagger-ui.html elle vous permet de voir toutes les routes en API REST de disponnible.
+Un Swagger est disponible à l'adresse suivante http://localhost:8080/swagger-ui.html elle vous permet de voir toutes les routes en API REST de disponnible. De ce fait toutes les actions possibles qui intéragissent avec la base de données.
+
+Les manipulations basiques tels que l'ajout d'élements dans la base de données sont faisable via l'interface web.

@@ -25,10 +25,6 @@ Vue.component('livraison', {
       <br>
       Retard : {{livraison.retard}}
       </p> </div>
-      <!--button @click="livraison.signaldelay()">Signaler un retard</button>
-      <div class="remove">
-      <button>Supprimer la livraison</button-->
-      </div>
       </div>
       `
 })
