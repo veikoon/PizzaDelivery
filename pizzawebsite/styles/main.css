@@ -326,10 +326,11 @@ a {
 
 .navacti {
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
     position: relative;
     align-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
@@ -368,7 +369,6 @@ a {
     margin: auto;
     display: flex;
     width: 50%;
-    position: absolute;
     bottom: 10px;
     left: 25%;
 }
