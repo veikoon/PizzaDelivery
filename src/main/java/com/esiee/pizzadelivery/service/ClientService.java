@@ -37,4 +37,8 @@ public class ClientService {
     public void setBalance(String name, float balance){
         userRepository.setBalance(name,balance);
     }
+
+    public void setOrder(String name, int nbOrder){
+        userRepository.setOrder(name,nbOrder);
+    }
 }

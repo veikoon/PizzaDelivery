@@ -25,4 +25,9 @@ public interface ClientRepository extends CrudRepository<Client, Long> {
     @Modifying
     @Query("UPDATE Client SET balance = :newBalance WHERE name = :clientName")
     void setBalance(@Param("clientName") String name, @Param("newBalance") float newBalance);
+
+    @Transactional
+    @Modifying
+    @Query("UPDATE Client SET nb_order = :nbOrder WHERE name = :clientName")
+    void setOrder(@Param("clientName") String name, @Param("nbOrder") int nbOrder);
 }

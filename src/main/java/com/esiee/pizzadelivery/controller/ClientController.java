@@ -55,4 +55,10 @@ public class ClientController {
             logger.info("setTotalFacturation()");
             clientService.setTotal(name, total);
         }
+
+        @RequestMapping(value="/client/order", method= RequestMethod.POST)
+        public void setNbOrder(@RequestParam String name, @RequestParam int order) throws Exception {
+            logger.info("setNbOrder()");
+            clientService.setOrder(name, order) ;
+        }
 }
