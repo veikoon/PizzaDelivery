@@ -2,9 +2,10 @@ var app = new Vue({
     el: '#ingredientsdropdown',
 
     data: {
-        selected: 1,
+        selected: [],
         ingredients: []
     },
+    methods: {},
     mounted: function() {
         this.$nextTick(function() {
             pizzaname = "";
@@ -21,6 +22,7 @@ var app = new Vue({
                     })
                 }
             });
+            this.selected.push(ingredient[0].name);
         })
     }
 })
@@ -29,7 +31,7 @@ var app2 = new Vue({
     el: '#livreursdropdown',
 
     data: {
-        selected: 1,
+        selected: "",
         livreurs: []
     },
     mounted: function() {
@@ -60,8 +62,11 @@ var app2 = new Vue({
 var app3 = new Vue({
     el: '#vehiculesdropdown',
     data: {
-        selected: 1,
+        selected: "",
         vehicules: []
+    },
+    methods: {
+
     },
     mounted: function() {
         this.$nextTick(function() {
@@ -76,6 +81,92 @@ var app3 = new Vue({
                     this.vehicules.push({
                         id: vehicule[i].id,
                         name: vehicule[i].name,
+                    })
+                }
+            });
+        })
+    }
+})
+
+
+var app4 = new Vue({
+    el: '#pizzasdropdown',
+    data: {
+        selected: 1,
+        pizzas: []
+    },
+    methods: {
+
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/pizza/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(pizza => {
+                for (let i = 0; i < pizza.length; i++) {
+                    console.log(pizza[i].name);
+                    this.pizzas.push({
+                        id: pizza[i].id,
+                        name: pizza[i].name,
+                    })
+                }
+            });
+        })
+    }
+})
+
+var app5 = new Vue({
+    el: '#clientsdropdown',
+    data: {
+        selected: 1,
+        clients: []
+    },
+    methods: {
+
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/client/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(client => {
+                for (let i = 0; i < client.length; i++) {
+                    this.clients.push({
+                        id: client[i].id,
+                        name: client[i].name,
+                    })
+                }
+            });
+        })
+    }
+})
+
+var app6 = new Vue({
+    el: '#sizesdropdown',
+    data: {
+        selected: 1,
+        sizes: []
+    },
+    methods: {
+
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            pizzaname = "";
+            pizzastatus = "";
+            const fetchpromise = fetch("http://localhost:8080/size/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(size => {
+                for (let i = 0; i < size.length; i++) {
+                    this.sizes.push({
+                        id: size[i].id,
+                        name: size[i].name,
                     })
                 }
             });

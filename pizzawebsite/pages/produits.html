@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <!--script type="text/javascript">
+        window.onbeforeunload = function() {
+            return "Dude, are you sure you want to leave? Think of the kittens!";
+        }
+    </script-->
     <div id="main">
         <div id="bloc_page">
             <div id="header">
@@ -19,10 +24,30 @@
             <h2 class="lightfont">
                 Pizza
             </h2>
-
+            <h3>Prix</h3>
+            <p onload="getsizes()" id="sizes"></p>
+            <script>
+                let data = [],
+                    fetchpromise = fetch("http://localhost:8080/size/all")
+                fetchpromise.then(response => {
+                    return response.json();
+                }).then(size => {
+                    for (let i = 0; i < size.length; i++) {
+                        var parElement = document.getElementById("sizes");
+                        var textToAdd = document.createTextNode(size[i].name + "........." + size[i].price + "$");
+                        parElement.appendChild(textToAdd);
+                        parElement.appendChild(document.createElement("br"));
+                        console.log(size[i].name);
+                        data.push({
+                            name: size[i].name,
+                            id: size[i].id,
+                            price: size[i].price
+                        })
+                    }
+                });
+            </script>
             <div id="produit" class="centering">
                 <produit v-for="produit in produits" v-bind:key="produit.id" v-bind:produit='produit'></produit>
-
             </div>
             <div class="new_component">
                 <div class="add_headline">
@@ -40,27 +65,28 @@
                                 <input type="text" name="nomPizza" id="pizzaname">
                             </p>
                             <div id="ingredientsdropdown"> Ingrédient
-                                <select v-model="selected" id="ingredientList">
-                                    <option v-for="ingredient in ingredients" v-bind:value="ingredient.id">
+                                <select v-model="selected" id="ingredientList" multiple>
+                                    <option v-for="ingredient in ingredients" v-bind:value="ingredient.name">
                                         {{ingredient.name}}
                                     </option>
                                 </select>
+                                <span id="ingredients">{{selected}}</span>
                             </div>
                             <br>
-                        </div>
+                            <input name="Ajouter" onclick="addpizza(document.getElementById('pizzaname').value)" type="submit" value="Ajouter">
 
-                        <input name="Ajouter" onclick="addpizza(document.getElementById('pizzaname').value)" type="submit" value="Ajouter">
+                        </div>
                         </p>
                     </form>
                 </div>
 
             </div>
-            <h2 class="lightfont">
+            <!--h2 class="lightfont">
                 Ingrédients
             </h2>
-            <div id="ingredients" class="centering">
+            <div id="ingredients" class="centering">lalala
                 <ingredient v-for="ingredient in ingredients" v-bind:key="ingredient.id" v-bind:ingredient='ingredient'></ingredient>
-            </div>
+            </div-->
             <br>
             <div class="new_component">
                 <div class="add_headline">
@@ -80,7 +106,6 @@
                             <br>
                         </div>
 
-
                         <input name="Ajouter" onclick="addingredient(document.getElementById('ingredientname').value)" type="submit" value="Ajouter">
                         </p>
                     </form>
@@ -92,6 +117,7 @@
             </div>
             <script src="../components/produits.js"></script>
             <script src="../scripts/postfunctions.js"></script>
+            <script src="../scripts/getfunctions.js"></script>
             <script src="../components/ingrédients.js"></script>
             <script src="../components/dropdowns_data.js"></script>
             <script src="../components/header.js"></script>

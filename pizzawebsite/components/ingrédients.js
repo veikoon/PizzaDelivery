@@ -10,16 +10,12 @@ Vue.component('ingredient', {
 
 var app = new Vue({
     el: '#ingredients',
-    selected: 1,
-    data: function() {
-        return {
-            ingredients: []
-        }
+    data: {
+        ingredients: [{ name: "test 1", id: 1 }]
+
     },
     mounted: function() {
         this.$nextTick(function() {
-            pizzaname = "";
-            pizzastatus = "";
             const fetchpromise = fetch("http://localhost:8080/ingredient/all");
             fetchpromise.then(response => {
                 return response.json();
@@ -31,12 +27,8 @@ var app = new Vue({
                         id: ingredient[i].id
                     })
                 }
+                console.log(this.ingredients[0])
             });
         })
-    },
-    methods: {
-        passData: function() {
-            this.$emit('passData')
-        }
     }
 })

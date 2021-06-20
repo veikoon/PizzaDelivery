@@ -5,16 +5,16 @@ Vue.component('livreurs', {
         <div class = "name">
             <p id="staffname">{{livreur.name}}</p> {{livreur.surname}}
         </div>
-            age:
+            Age:
             {{livreur.age}}
             <br>
-            retards : 
+            Retards : 
             {{livreur.retard}}
             <br>
-            phone : 
+            Phone : 
             {{livreur.phone}}
             <br>
-            adresse : 
+            Adresse : 
             {{livreur.address}}
             <div class="remove">
                 <button onclick="deletelivreur(document.getElementById('staffname').value)">Supprimer le livreur</button>

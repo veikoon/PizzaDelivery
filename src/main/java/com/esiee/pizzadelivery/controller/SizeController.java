@@ -13,34 +13,34 @@ import java.util.List;
 @RestController
 public class SizeController {
 
-        private Logger logger = LoggerFactory.getLogger(SizeController.class);
+    private Logger logger = LoggerFactory.getLogger(SizeController.class);
 
-        @Autowired
-        private SizeService sizeService;
+    @Autowired
+    private SizeService sizeService;
 
-        @RequestMapping(value="/size/new", method= RequestMethod.POST)
-        public Size newTaille(@RequestBody Size size) {
-            logger.info("newTaille()");
-            logger.info("name :" + size.getName());
-            return sizeService.newTaille(size);
-        }
+    @RequestMapping(value = "/size/new", method = RequestMethod.POST)
+    public Size newTaille(@RequestBody Size size) {
+        logger.info("newTaille()");
+        logger.info("name :" + size.getName());
+        return sizeService.newTaille(size);
+    }
 
-        @RequestMapping(value="/size/delete", method= RequestMethod.DELETE)
-        public boolean deleteTaille(@RequestParam String name) {
-            logger.info("deleteTaille()");
-            sizeService.deleteTaille(name);
-            return true;
-        }
+    @RequestMapping(value = "/size/delete", method = RequestMethod.DELETE)
+    public boolean deleteTaille(@RequestParam String name) {
+        logger.info("deleteTaille()");
+        sizeService.deleteTaille(name);
+        return true;
+    }
 
-        @RequestMapping(value="/size", method= RequestMethod.GET)
-        public Size findTaille(@RequestParam String name) throws Exception {
-            logger.info("findTaille()");
-            return sizeService.findByName(name);
-        }
+    @RequestMapping(value = "/size", method = RequestMethod.GET)
+    public Size findTaille(@RequestParam String name) throws Exception {
+        logger.info("findTaille()");
+        return sizeService.findByName(name);
+    }
 
-        @RequestMapping(value="/size/all", method= RequestMethod.GET)
-        public List<Size> findAll() throws Exception {
-            logger.info("findAll()");
-            return sizeService.findAll();
-        }
+    @RequestMapping(value = "/size/all", method = RequestMethod.GET)
+    public List<Size> findAll() throws Exception {
+        logger.info("findAll()");
+        return sizeService.findAll();
+    }
 }
