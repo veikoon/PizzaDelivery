@@ -12,7 +12,7 @@ let stats = {
     },
     client_stats: {
         group_name: "Top clients",
-        clients: []
+        top_clients: []
     },
     vehicle_stats: {
         group_name: "Unused vehicles",
@@ -42,21 +42,23 @@ fetchpromise.then(response => {
     stats.staff_stats.best_staff = {
         staff_name: staff[best_staff_index].name,
         staff_surname: staff[best_staff_index].surname,
-        staff_nb_delay: staff[best_staff_index].nb_delay
+        staff_nb_delay: staff[best_staff_index].nbDelay
     }
 
     stats.staff_stats.worst_staff = {
         staff_name: staff[worst_staff_index].name,
         staff_surname: staff[worst_staff_index].surname,
-        staff_nb_delay: staff[worst_staff_index].nb_delay
+        staff_nb_delay: staff[worst_staff_index].nbDelay
     }
     document.getElementById('food_stats_title').innerHTML = stats.food_stats.group_name;
     document.getElementById('staff_stats_title').innerHTML = stats.staff_stats.group_name;
-    document.getElementById('best_staff').innerHTML = stats.staff_stats.best_staff.staff_name + " " + stats.staff_stats.best_staff.staff_surname;
-    document.getElementById('worst_staff').innerHTML = stats.staff_stats.worst_staff.staff_name + " " + stats.staff_stats.worst_staff.staff_surname;
+    document.getElementById('best_staff').innerHTML += stats.staff_stats.best_staff.staff_name + " " + stats.staff_stats.best_staff.staff_surname + " - " + stats.staff_stats.best_staff.staff_nb_delay + " retards";
+    document.getElementById('worst_staff').innerHTML += stats.staff_stats.worst_staff.staff_name + " " + stats.staff_stats.worst_staff.staff_surname + " - " + stats.staff_stats.worst_staff.staff_nb_delay + " retards";
 });
 
 var delivery = [];
+let countpizzas = [];
+let changed = 0;
 fetchpromise = fetch("http://localhost:8080/delivery/all");
 fetchpromise.then(response => { return response.json(); }).then(orders => {
     delivery.push(orders);
@@ -102,6 +104,40 @@ fetchpromise.then(response => { return response.json(); }).then(vehicule => {
             vehicules.push(vehicule[elem].name)
         }
     }
-    document.getElementById('vehiculess').innerHTML = "Vehicule jamais utilisé :" + vehicules;
+    document.getElementById('vehicules').innerHTML = "Vehicule jamais utilisé :" + vehicules;
     //  console.log(result);
+    console.log(max);
+});
+
+let top_clients = [];
+fetchpromise_client = fetch("http://localhost:8080/client/all");
+fetchpromise_client.then(response => {
+    return response.json();
+}).then(client => {
+    console.log(client.length);
+    for (let i = 0; i < client.length; i++) {
+        //console.log(i);
+        //console.log(client)
+        top_clients[i] = client[i];
+    }
+    for (let x = 0; x < client.length-1; x++) {
+        for(let y = 0; y < client.length-x-1; y++){
+            if(top_clients[y].totalFacturation > top_clients[y+1].totalFacturation){
+                let tmp_client = top_clients[y]
+                top_clients[y] = top_clients[y+1];
+                top_clients[y+1] = tmp_client;
+            }
+        }
+    }
+    for(let j = 0; j <5 && j<top_clients.length; j++){
+        stats.client_stats.top_clients[j] = top_clients[j];
+    }
+    document.getElementById('client_stats_title').innerHTML = stats.client_stats.group_name;
+    for(let w = 0; w<stats.client_stats.top_clients.length; w++)
+    {
+        document.getElementById('top_clients').innerHTML += stats.client_stats.top_clients[w].name+" "+stats.client_stats.top_clients[w].surname+" "+stats.client_stats.top_clients[w].totalFacturation + "\n";
+    }
+    
+    
+
 });
