@@ -12,7 +12,6 @@ public class DeliveryDTO {
     private String vehicule;
     private boolean isLate;
     private String pizza;
-    private float prix;
     private String size;
 
     public DeliveryDTO() {
@@ -58,13 +57,6 @@ public class DeliveryDTO {
         this.pizza = pizza;
     }
 
-    public float getPrix() {
-        return prix;
-    }
-
-    public void setPrix(float prix) {
-        this.prix = prix;
-    }
 
     public String getStaff() {
         return staff;

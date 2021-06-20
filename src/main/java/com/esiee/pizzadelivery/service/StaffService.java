@@ -19,7 +19,7 @@ public class StaffService {
     }
 
     public void deleteLivreur(String name){
-        staffRepository.deleteByName(name);
+        staffRepository.delete(staffRepository.findByName(name));
     }
 
     public Staff findByName(String name){

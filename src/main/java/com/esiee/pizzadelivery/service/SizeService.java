@@ -19,7 +19,7 @@ public class SizeService {
     }
 
     public void deleteTaille(String name){
-        sizeRepository.deleteByName(name);
+        sizeRepository.delete(sizeRepository.findByName(name));
     }
 
     public Size findByName(String name){

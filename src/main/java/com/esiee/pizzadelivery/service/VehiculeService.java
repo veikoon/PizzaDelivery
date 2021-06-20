@@ -20,7 +20,7 @@ public class VehiculeService {
     }
 
     public void deleteVehicule(String name){
-        vehiculeRepository.deleteByName(name);
+        vehiculeRepository.delete(vehiculeRepository.findByName(name));
     }
 
     public Vehicule findByName(String name){

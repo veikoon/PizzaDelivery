@@ -19,7 +19,7 @@ public class ClientService {
     }
 
     public void deleteClient(String name){
-        userRepository.deleteByName(name);
+        userRepository.delete(userRepository.findByName(name));
     }
 
     public Client findByName(String name){

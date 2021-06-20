@@ -24,7 +24,7 @@ public class PizzaService {
     private IngredientService ingredientService;
 
     public void deletePizza(String name){
-        pizzaRepository.deleteByName(name);
+        pizzaRepository.delete(pizzaRepository.findByName(name));
     }
 
     public Pizza findByName(String name){

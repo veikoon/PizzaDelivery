@@ -27,6 +27,6 @@ public class IngredientService {
     }
 
     public void deleteIngredient(String name){
-        ingredientRepository.deleteByName(name);
+        ingredientRepository.delete(ingredientRepository.findByName(name));
     }
 }
