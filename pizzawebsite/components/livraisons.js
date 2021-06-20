@@ -8,7 +8,10 @@ Vue.component('livraison', {
       {{livraison.livreur.name}} {{livraison.livreur.surname}}
       <br>
       Pizza:
-      {{livraison.pizza.name}}
+      {{livraison.pizza.name}} {{livraison.size.name}}
+      <br>
+      Prix:
+      {{livraison.size.price}} $
       <br>
      Vehicule : 
       {{livraison.vehicule.name}}

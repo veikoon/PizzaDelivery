@@ -26,6 +26,14 @@
             </h2>
             <h3>Prix</h3>
             <p onload="getsizes()" id="sizes"></p>
+            <br>
+            <div>Nouvelle taille:
+                <input id="sizename"></input>
+                Prix:
+                <input id="pricesize"></input>
+                <button onclick="addsize()">Ajouter</button>
+            </div>
+
             <script>
                 let data = [],
                     fetchpromise = fetch("http://localhost:8080/size/all")
@@ -70,7 +78,6 @@
                                         {{ingredient.name}}
                                     </option>
                                 </select>
-                                <span id="ingredients">{{selected}}</span>
                             </div>
                             <br>
                             <input name="Ajouter" onclick="addpizza(document.getElementById('pizzaname').value)" type="submit" value="Ajouter">

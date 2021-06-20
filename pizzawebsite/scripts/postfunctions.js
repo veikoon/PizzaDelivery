@@ -1,6 +1,9 @@
 function addpizza(value) {
     console.log("pizza name");
-    console.log(document.getElementById('ingredients').value);
+    let selectElement = document.getElementById('ingredientList')
+    let selectedValues = Array.from(selectElement.selectedOptions)
+        .map(option => option.value)
+    console.log(selectedValues); // make sure you know what '.map' does
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
     fetch("http://localhost:8080/pizza/new", {
@@ -8,7 +11,7 @@ function addpizza(value) {
             headers: myHeaders,
             body: JSON.stringify({
                 "name": value,
-                "ingredients": document.getElementById('ingredients').value
+                "ingredients": selectedValues
             })
         })
         .then(response => console.log("ADD PIZZA OK"))
@@ -87,6 +90,24 @@ function addclient() {
         .then(response => console.log(response.json()))
         .catch(error => console.log("Erreur: " + error));
 }
+
+
+
+function addsize() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    fetch("http://localhost:8080/size/new", {
+            method: "POST",
+            headers: myHeaders,
+            body: JSON.stringify({
+                "name": document.getElementById("sizename").value,
+                "price": document.getElementById("pricesize").value
+            })
+        })
+        .then(response => console.log(response.json()))
+        .catch(error => console.log("Erreur: " + error));
+}
+
 
 function addvehicules(name) {
     var myHeaders = new Headers();
