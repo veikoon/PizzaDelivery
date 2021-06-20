@@ -38,5 +38,15 @@ fetchpromise.then(response => { return response.json(); }).then(orders => {
             method: "POST",
             headers: myHeaders
         })
+    }
+    for (let data in deliveries) {
+
+        console.log(data);
+        console.log(deliveries[data]);
+        var myHeaders = new Headers();
+        fetch("http://localhost:8080/client/order?name=" + data + "&order=" + deliveries[data], {
+            method: "POST",
+            headers: myHeaders
+        })
     };
 });
