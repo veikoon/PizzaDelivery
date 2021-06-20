@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*", allowedHeaders = "*", maxAge = 3600)
 @RestController
 public class IngredientController {
 
@@ -17,6 +17,7 @@ public class IngredientController {
 
         @Autowired
         private IngredientService ingredientService;
+
 
         @RequestMapping(value="/ingredient/new", method= RequestMethod.POST)
         public Ingredient newIngredient(@RequestBody Ingredient ingredient) {
