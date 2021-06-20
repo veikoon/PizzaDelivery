@@ -85,7 +85,8 @@ function addclient() {
                 "name": document.getElementById("prenomClient").value,
                 "surname": document.getElementById("nomClient").value,
                 "address": document.getElementById("adresseClient").value,
-                "phone": document.getElementById("telephoneClient").value
+                "phone": document.getElementById("telephoneClient").value, 
+                "balance": document.getElementById("soldeClient").value
             })
         })
         .then(response => console.log(response.json()))

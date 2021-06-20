@@ -135,7 +135,7 @@ fetchpromise_client.then(response => {
     document.getElementById('client_stats_title').innerHTML = stats.client_stats.group_name;
     for(let w = 0; w<stats.client_stats.top_clients.length; w++)
     {
-        document.getElementById('top_clients').innerHTML += stats.client_stats.top_clients[w].name+" "+stats.client_stats.top_clients[w].surname+" - Facturation totale : "+stats.client_stats.top_clients[w].totalFacturation + " - Facturation moyenne par commande : " + stats.client_stats.top_clients[w].totalFacturation/stats.client_stats.top_clients[w].nbOrder;
+        document.getElementById('top_clients').innerHTML += stats.client_stats.top_clients[w].name+" "+stats.client_stats.top_clients[w].surname+" - Facturation totale : "+stats.client_stats.top_clients[w].totalFacturation + " - Facturation moyenne par commande : " + stats.client_stats.top_clients[w].totalFacturation/stats.client_stats.top_clients[w].nbOrder + "<br>";
 
     }
     
