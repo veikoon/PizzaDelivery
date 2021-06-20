@@ -458,6 +458,8 @@ a {
     margin-right: 5%;
     padding-top: auto;
     padding-left: auto;
+    margin-bottom: 5%;
+    padding-bottom: 3%;
     width: 20%;
     height: fit-content;
     flex-direction: column;
@@ -682,7 +684,7 @@ a {
     font-size: 40px;
 }
 
-.stats_component{
+.stats_component {
     align-items: flex-start;
     flex-direction: column;
     width: 100%;

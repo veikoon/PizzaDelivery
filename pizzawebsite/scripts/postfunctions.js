@@ -63,10 +63,11 @@ function deletelivreur(name) {
         .catch(error => error("Erreur: " + error));
 }
 
-function deletepizza() {
+function deletepizza(value) {
+    console.log(value);
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    fetch("http://localhost:8080/pizza/delete?name=" + document.getElementById("nompizza").value, {
+    fetch("http://localhost:8080/pizza/delete?name=" + value, {
             method: "DELETE",
             headers: myHeaders
         })
