@@ -17,10 +17,8 @@ Vue.component('clients', {
         <br>
         Facturation:
         {{client.facturation}}
-            <!--div class="remove">
-                <button>Supprimer le compte client</button>
-            </div-->
-        </div>
+        <br>
+        Droit a une pizza gratuite : {{client.pizza_gratuite}}
     </div>`
 })
 
@@ -38,6 +36,10 @@ var app = new Vue({
                 return response.json();
             }).then(client => {
                 for (let i = 0; i < client.length; i++) {
+                    let freepizza = false;
+                    if(client[i].nbOrder > 10){
+                        freepizza=true;
+                    }
                     console.log(client[i].name);
                     this.clients.push({
                         id: client[i].id,
@@ -48,7 +50,8 @@ var app = new Vue({
                         phone: client[i].phone,
                         balance: client[i].balance,
                         facturation: client[i].totalFacturation,
-                        order: client[i].nbOrder
+                        order: client[i].nbOrder,
+                        pizza_gratuite : freepizza
                     })
                 }
             });
