@@ -64,15 +64,15 @@ function deletelivreur(name) {
 }
 
 function deletepizza(value) {
-    console.log(value);
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    fetch("http://localhost:8080/pizza/delete?name=" + value, {
-            method: "DELETE",
-            headers: myHeaders
-        })
-        .then(response => console.log("DELETE PIZZA OK"))
-        .catch(error => error("Erreur: " + error));
+    /*  console.log(value);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      fetch("http://localhost:8080/pizza/delete?name=" + value, {
+              method: "DELETE",
+              headers: myHeaders
+          })
+          .then(response => console.log("DELETE PIZZA OK"))
+          .catch(error => error("Erreur: " + error));*/
 }
 
 function addclient() {
@@ -85,7 +85,7 @@ function addclient() {
                 "name": document.getElementById("prenomClient").value,
                 "surname": document.getElementById("nomClient").value,
                 "address": document.getElementById("adresseClient").value,
-                "phone": document.getElementById("telephoneClient").value, 
+                "phone": document.getElementById("telephoneClient").value,
                 "balance": document.getElementById("soldeClient").value
             })
         })

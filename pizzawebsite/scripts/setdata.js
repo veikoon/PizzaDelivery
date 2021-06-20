@@ -17,20 +17,9 @@ fetchpromise.then(response => { return response.json(); }).then(orders => {
     for (let data in result) {
         console.log(result[data]);
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
-        myHeaders.append("'Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-        myHeaders.append("'Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization,X-Request-With")
-        fetch("http://localhost:8080/client/total", {
-                method: "POST",
-                headers: myHeaders,
-                body: JSON.stringify({
-                    "name": data,
-                    "totalFacturation": result[data]
-                })
-            })
-            .then(response => console.log(response.json()))
-            .catch(error => console.log("Erreur: " + error));
-
+        fetch("http://localhost:8080/client/total?name=" + data + "&total=" + result[data], {
+            method: "POST",
+            headers: myHeaders
+        })
     };
 });
