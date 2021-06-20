@@ -16,9 +16,6 @@ Vue.component('livreurs', {
             <br>
             Adresse : 
             {{livreur.address}}
-            <div class="remove">
-                <button onclick="deletelivreur(document.getElementById('staffname').value)">Supprimer le livreur</button>
-            </div>
         </div>
     </div>`
 })
