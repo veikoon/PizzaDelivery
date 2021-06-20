@@ -18,11 +18,32 @@
         </div>
         <h2 class="lightfont">Statistiques</h2>
         <div id="statistiques">
-            <stat v-for="stats in stats" v-bind:key="stats.groupe" v-bind:stats='stats'></stat>
+
+            <div class="stats_component">
+                <div class="stats_group">
+                    <p id="food_stats_title"></p>
+                </div>
+                <p>Meilleur pizza = </p>
+                <p id="best_pizza"></p>
+                <p>Pire pizza = </p>
+                <p id="worst_pizza"></p>
+            </div>
+
+            <div class="stats_component">
+                <div class="stats_group">
+                    <p id="staff_stats_title"></p>
+                </div>
+                <p>Meilleur employé = </p>
+                <p id="best_staff"></p>
+                <p>Pire employé = </p>
+                <p id="worst_staff"></p>
+            </div>
         </div>
         <div id="footer">
             <footercomp></footercomp>
         </div>
+
+        <script src="../scripts/statdata.js"></script>
         <script src="../components/stats.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>

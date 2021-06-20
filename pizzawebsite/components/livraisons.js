@@ -3,16 +3,18 @@ Vue.component('livraison', {
     template: `
     <div class="livraisonscomponent">
    
-      <div class = "name">{{livraison.id}} </div>
       <div><p><br>
       Livreur:
-      {{livraison.livreur}}
+      {{livraison.livreur.name}} {{livraison.livreur.surname}}
       <br>
       Pizza:
-      {{livraison.pizza}}
+      {{livraison.pizza.name}} {{livraison.size.name}}
+      <br>
+      Prix:
+      {{livraison.size.price}} $
       <br>
      Vehicule : 
-      {{livraison.vehicule}}
+      {{livraison.vehicule.name}}
       <br>
       Date: {{livraison.date}}
       <br>
@@ -31,8 +33,6 @@ var app = new Vue({
     },
     mounted: function() {
         this.$nextTick(function() {
-            pizzaname = "";
-            pizzastatus = "";
             const fetchpromise = fetch("http://localhost:8080/delivery/all");
             fetchpromise.then(response => {
                 return response.json();
@@ -41,7 +41,7 @@ var app = new Vue({
                     console.log(i);
                     this.livraisons.push({
                         id: delivery[i].id,
-                        livreur: delivery[i].name,
+                        livreur: delivery[i].staff,
                         client: delivery[i].client,
                         vehicule: delivery[i].vehicule,
                         date: delivery[i].date,

@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <!--script type="text/javascript">
+        window.onbeforeunload = function() {
+            return "Dude, are you sure you want to leave? Think of the kittens!";
+        }
+    </script-->
     <div id="main">
         <div id="header">
             <headercomp></headercomp>
@@ -31,20 +36,38 @@
                 <form>
                     <div class="form_content">
                         <br>
-                        <p>ID de la livraison
-                            <input type="int" name="idLivraison">
-                        </p>
-                        <div id="livreursdropdown"> Livreur
-                            <select v-model="selected">
-                                <option v-for="livreur in livreurs" v-bind:value="livreur.id">
+                        <div> Livreur
+                            <select v-model="selected" id="livreursdropdown">
+                                <option v-for="livreur in livreurs" v-bind:value="livreur.name">
                                     {{livreur.name}}
                                 </option>
                             </select>
                         </div>
-                        <div id="vehiculesdropdown"> Vehicule
-                            <select v-model="selected">
-                                <option v-for="vehicule in vehicules" v-bind:value="vehicule.id">
+                        <div> Client
+                            <select v-model="selected" id="clientsdropdown">
+                                <option v-for="client in clients" v-bind:value="client.name">
+                                    {{client.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div> Vehicule
+                            <select v-model="selected" id="vehiculesdropdown">
+                                <option v-for="vehicule in vehicules" v-bind:value="vehicule.name">
                                     {{vehicule.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div> Pizza
+                            <select v-model="selected" id="pizzasdropdown">
+                                <option v-for="pizza in pizzas" v-bind:value="pizza.name">
+                                    {{pizza.name}}
+                                </option>
+                            </select>
+                        </div>
+                        <div> Taille
+                            <select v-model="selected" id="sizesdropdown">
+                                <option v-for="size in sizes" v-bind:value="size.name">
+                                    {{size.name}}
                                 </option>
                             </select>
                         </div>
@@ -52,7 +75,7 @@
                     </div>
 
 
-                    <input name="Ajouter" type="submit" value="Ajouter">
+                    <input name="Ajouter" type="submit" value="Ajouter" onclick="adddelivery()">
                     </p>
                 </form>
             </div>
@@ -63,7 +86,8 @@
         </div>
         <script src="../components/livraisons.js"></script>
         <script src="../components/dropdowns_data.js"></script>
-        <script src="../components/commandes.js"></script>
+
+        <script src="../scripts/postfunctions.js"></script>
         <script src="../components/header.js"></script>
         <script src="../components/footer.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>

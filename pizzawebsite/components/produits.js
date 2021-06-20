@@ -1,5 +1,5 @@
 Vue.component('produit', {
-    props: ['produit'],
+    props: ['produit', 'sizes'],
     template: `
     <div class="produit">
         <div class="texte">
@@ -11,17 +11,10 @@ Vue.component('produit', {
             <div class="basic_info">
                 <div class="ingredients" v-for="ingredient in produit.ingredients" v-bind:value="ingredient.id">
                 {{ingredient.name}},
-                </div> <br>
-                <div class="prix">
-                    <ul id="taille">
-                        <li id="naine">Naine....................{{produit.prixNaine}}€</li>
-                        <li id="humaine">Humaine.............{{produit.prixHumaine}}€</li>
-                        <li id="ogresque">Ogresque............{{produit.prixOgresque}}€</li>
-
-                    </ul>
                 </div>
-                <div class="description">
-                {{produit.descPizza}}
+                <div class="prix" v-for="size in sizes" v-bind:value="size.id"> taille:
+                    <ul id="taille">{{size.taille}} ............... {{size.price}}
+                    </ul>
                 </div>
             </div>
         </div>
@@ -33,8 +26,11 @@ Vue.component('produit', {
 
 var app = new Vue({
     el: '#produit',
-    data: {
-        produits: []
+    data: function() {
+        return {
+            produits: [],
+            sizes: [],
+        }
     },
     mounted: function() {
         this.$nextTick(function() {
@@ -54,5 +50,19 @@ var app = new Vue({
                 }
             });
         })
+
+        const fetchpromise2 = fetch("http://localhost:8080/size/all");
+        fetchpromise2.then(response => {
+            return response.json();
+        }).then(size => {
+            for (let i = 0; i < size.length; i++) {
+                console.log(size[i].name);
+                this.sizes.push({
+                    taille: size[i].name,
+                    id: size[i].id,
+                    price: size[i].price
+                })
+            }
+        });
     }
 })
