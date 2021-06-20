@@ -195,7 +195,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .mecenes {
@@ -750,4 +749,8 @@ a {
 
 .retard {
     display: flex;
+}
+
+#top_clients {
+    text-align: left;
 }

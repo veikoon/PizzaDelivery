@@ -17,9 +17,9 @@ Vue.component('clients', {
         <br>
         Facturation:
         {{client.facturation}}
-            <div class="remove">
+            <!--div class="remove">
                 <button>Supprimer le compte client</button>
-            </div>
+            </div-->
         </div>
     </div>`
 })

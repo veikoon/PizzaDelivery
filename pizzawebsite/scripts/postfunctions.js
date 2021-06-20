@@ -64,15 +64,15 @@ function deletelivreur(name) {
 }
 
 function deletepizza(value) {
-    console.log(value);
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    fetch("http://localhost:8080/pizza/delete?name=" + value, {
-            method: "DELETE",
-            headers: myHeaders
-        })
-        .then(response => console.log("DELETE PIZZA OK"))
-        .catch(error => error("Erreur: " + error));
+    /*  console.log(value);
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+      fetch("http://localhost:8080/pizza/delete?name=" + value, {
+              method: "DELETE",
+              headers: myHeaders
+          })
+          .then(response => console.log("DELETE PIZZA OK"))
+          .catch(error => error("Erreur: " + error));*/
 }
 
 function addclient() {
@@ -85,7 +85,7 @@ function addclient() {
                 "name": document.getElementById("prenomClient").value,
                 "surname": document.getElementById("nomClient").value,
                 "address": document.getElementById("adresseClient").value,
-                "phone": document.getElementById("telephoneClient").value, 
+                "phone": document.getElementById("telephoneClient").value,
                 "balance": document.getElementById("soldeClient").value
             })
         })
@@ -127,40 +127,77 @@ function addvehicules(name) {
 
 function adddelivery() {
     var client = document.getElementById("clientsdropdown").value;
-    console.log("entering function");
-    let nb_deliveries = 0;
-    const fetchpromise = fetch("http://localhost:8080/delivery/all");
+
+    var price = 0;
+    var newbalance = 0;
+    //GET PRICE
+    fetchpromise = fetch("http://localhost:8080/size?name=" + document.getElementById("sizesdropdown").value)
     fetchpromise.then(response => {
         return response.json();
-    }).then(orders => {
-        var result = {};
-        orders.forEach(function(elem) {
-            console.log(elem);
-            if (elem.client.name === client) {
-                nb_deliveries++;
+    }).then(size => {
+        console.log(size);
+        price = size.price;
+        fetchpromise = fetch("http://localhost:8080/client?name=" + client)
+        fetchpromise.then(response => {
+            return response.json();
+        }).then(client => {
+            console.log(client);
+            if (client.balance > price) {
+                newbalance = client.balance - price;
+                console.log(client.balance);
+                console.log(price);
+                console.log(newbalance);
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+                fetch("http://localhost:8080/delivery/new", {
+                        method: "POST",
+                        headers: myHeaders,
+                        body: JSON.stringify({
+                            "staff": document.getElementById("livreursdropdown").value,
+                            "client": document.getElementById("clientsdropdown").value,
+                            "vehicule": document.getElementById("vehiculesdropdown").value,
+                            "pizza": document.getElementById("pizzasdropdown").value,
+                            "size": document.getElementById("sizesdropdown").value,
+                        })
+                    })
+                    .then(response => {
+                        console.log("soustraction balance");
+                        console.log(newbalance);
+                        console.log(response.json())
+                        var myHeaders = new Headers();
+                        myHeaders.append("Content-Type", "application/json");
+                        fetch("http://localhost:8080/client/balance?name=" + client.name + "&balance=" + newbalance, {
+                            method: "POST",
+                            headers: myHeaders
+                        })
+                    }).then(response => {
+                        console.log(response);
+                    })
+                    .catch(error => console.log("Erreur: " + error));
+
+            } else {
+                alert("balance insuffisante");
             }
         });
-        console.log("deliveries");
-        console.log(nb_deliveries);
     });
-    if (nb_deliveries % 10 == true) {
-        let cost = 0;
-    }
 
-    console.log(document.getElementById("livreursdropdown").value);
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-    fetch("http://localhost:8080/delivery/new", {
-            method: "POST",
-            headers: myHeaders,
-            body: JSON.stringify({
-                "staff": document.getElementById("livreursdropdown").value,
-                "client": document.getElementById("clientsdropdown").value,
-                "vehicule": document.getElementById("vehiculesdropdown").value,
-                "pizza": document.getElementById("pizzasdropdown").value,
-                "size": document.getElementById("sizesdropdown").value,
+
+    /*
+
+        console.log(document.getElementById("livreursdropdown").value);
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        fetch("http://localhost:8080/delivery/new", {
+                method: "POST",
+                headers: myHeaders,
+                body: JSON.stringify({
+                    "staff": document.getElementById("livreursdropdown").value,
+                    "client": document.getElementById("clientsdropdown").value,
+                    "vehicule": document.getElementById("vehiculesdropdown").value,
+                    "pizza": document.getElementById("pizzasdropdown").value,
+                    "size": document.getElementById("sizesdropdown").value,
+                })
             })
-        })
-        .then(response => console.log(response.json()))
-        .catch(error => console.log("Erreur: " + error));
+            .then(response => console.log(response.json()))
+            .catch(error => console.log("Erreur: " + error));*/
 }

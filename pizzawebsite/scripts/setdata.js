@@ -1,10 +1,10 @@
 var delivery = [];
-let countpizzas = [];
 let changed = 0;
 fetchpromise = fetch("http://localhost:8080/delivery/all");
 fetchpromise.then(response => { return response.json(); }).then(orders => {
     console.log(orders);
     var result = {};
+    var deliveries = {}
     orders.forEach(function(elem) {
         if (elem.client.name in result) {
             result[elem.client.name] = result[elem.client.name] + elem.size.price;
@@ -12,25 +12,31 @@ fetchpromise.then(response => { return response.json(); }).then(orders => {
         } else {
             result[elem.client.name] = elem.size.price;
         }
+
+        if (elem.client.name in deliveries) {
+            deliveries[elem.client.name] = ++deliveries[elem.client.name];
+        } else {
+            deliveries[elem.client.name] = 1;
+        }
+        console.log(deliveries);
     });
     console.log(result);
     for (let data in result) {
         console.log(result[data]);
         var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
-        myHeaders.append("'Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE");
-        myHeaders.append("'Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization,X-Request-With")
-        fetch("http://localhost:8080/client/total", {
-                method: "POST",
-                headers: myHeaders,
-                body: JSON.stringify({
-                    "name": data,
-                    "totalFacturation": result[data]
-                })
-            })
-            .then(response => console.log(response.json()))
-            .catch(error => console.log("Erreur: " + error));
+        fetch("http://localhost:8080/client/total?name=" + data + "&total=" + result[data], {
+            method: "POST",
+            headers: myHeaders
+        })
+    }
+    for (let data in deliveries) {
 
+        console.log(data);
+        console.log(deliveries[data]);
+        var myHeaders = new Headers();
+        fetch("http://localhost:8080/client/order?name=" + data + "&order=" + deliveries[data], {
+            method: "POST",
+            headers: myHeaders
+        })
     };
 });
