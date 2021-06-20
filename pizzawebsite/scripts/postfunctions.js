@@ -125,6 +125,15 @@ function addvehicules(name) {
         .catch(error => console.log("Erreur: " + error));
 }
 
+function setLate(id) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    fetch("localhost:8080/delivery/islate?id=" + id + "&late=true", {
+        method: "POST",
+        headers: myHeaders
+    })
+}
+
 function adddelivery() {
     var client = document.getElementById("clientsdropdown").value;
 

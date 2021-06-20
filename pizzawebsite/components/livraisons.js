@@ -23,9 +23,9 @@ Vue.component('livraison', {
       <br>
       Retard : {{livraison.retard}}
       </p> </div>
-      <button>Signaler un retard</button>
+      <button onclick="setLate(livraison.id)">Signaler un retard</button>
       <div class="remove">
-      <button>Supprimer la livraison</button>
+      <button >Supprimer la livraison</button>
       </div>
       </div>`
 })
