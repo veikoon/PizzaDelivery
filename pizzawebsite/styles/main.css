@@ -663,7 +663,7 @@ a {
     height: fit-content;
 }
 
-.statcomponent {
+#statistiques {
     color: white;
     display: block;
     align-content: center;
@@ -678,11 +678,15 @@ a {
     height: fit-content;
 }
 
-.statcomponent .groupe {
-    align-items: left;
-    width: fit-content;
-    display: block;
-    font-size: 30px;
+.stats_group {
+    font-size: 40px;
+}
+
+.stats_component{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
     padding-left: 5%;
 }
 

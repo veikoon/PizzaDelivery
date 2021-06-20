@@ -31,12 +31,12 @@ fetchpromise.then(response => {
 
     for (let i = 0; i < staff.length; i++) {
         console.log(i);
-        if (staff[i].nb_delay < min_delay) {
-            min_delay = staff[i].nb_delay;
+        if (staff[i].nbDelay < min_delay) {
+            min_delay = staff[i].nbDelay;
             best_staff_index = i;
         }
-        if (staff[i].nb_delay > max_delay) {
-            max_delay = staff[i].nb_delay;
+        if (staff[i].nbDelay > max_delay) {
+            max_delay = staff[i].nbDelay;
             worst_staff_index = i;
         }
     }
@@ -59,5 +59,29 @@ fetchpromise.then(response => {
     document.getElementById('worst_staff').innerHTML = stats.staff_stats.worst_staff.staff_name + " " + stats.staff_stats.worst_staff.staff_surname;
 });
 
-//document.getElementById('top_clients_title').innerHTML = data["client_stats"]["group_name"];
-//document.getElementById('vehicle_stats_title').innerHTML = data["vehicle_stats"]["group_name"];
+let countpizzas = [];
+let changed = 0;
+fetchpromise = fetch("http://localhost:8080/delivery/all");
+fetchpromise.then(response => { return response.json(); }).then(orders => {
+    var result = {};
+    orders.forEach(function(elem) {
+        if (elem.pizza.name in result) {
+            result[elem.pizza.name] = ++result[elem.pizza.name];
+        } else {
+            result[elem.pizza.name] = 1;
+        }
+    });
+    max = orders[0].pizza.name;
+    min = orders[0].pizza.name;
+    orders.forEach(function(elem) {
+        if (result[max] < result[elem.pizza.name]) { max = elem.pizza.name; }
+        if (result[min] > result[elem.pizza.name]) {
+            console.log(result[min]);
+            console.log(elem);
+            min = elem.pizza.name;
+        }
+    });
+    console.log(max);
+    document.getElementById('best_pizza').innerHTML = max;
+    document.getElementById('worst_pizza').innerHTML = min;
+});
