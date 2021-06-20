@@ -9,7 +9,7 @@ Vue.component('produit', {
                 </h1>
             </div>
             <div class="basic_info">
-                <div class="ingredients" v-for="ingredient in produit.ingredients" v-bind:value="ingredient.id">
+                <div id="infospizza"class="ingredients" v-for="ingredient in produit.ingredients" v-bind:value="ingredient.id">
                 {{ingredient.name}},
                 </div>
                 <div class="prix" v-for="size in sizes" v-bind:value="size.id"> taille:
@@ -18,9 +18,9 @@ Vue.component('produit', {
                 </div>
             </div>
         </div>
-        <div class="remove">
-            <button onclick="deletepizza()">Supprimer la pizza</button>
-        </div>
+        <!--iv class="remove">
+            <button onclick="deletepizza(document.getElementById('nompizza'))">Supprimer la pizza</button>
+        </div-->
     </div>`
 })
 
@@ -36,7 +36,7 @@ var app = new Vue({
         this.$nextTick(function() {
             pizzaname = "";
             pizzastatus = "";
-            const fetchpromise = fetch("http://localhost:8080/pizza/all");
+            const fetchpromise = fetch("http://127.0.0.1:8080/pizza/all");
             fetchpromise.then(response => {
                 return response.json();
             }).then(pizza => {
