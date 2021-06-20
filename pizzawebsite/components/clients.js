@@ -6,19 +6,19 @@ Vue.component('clients', {
             {{client.name}} {{client.surname}}
         </div>
         <br>
-        Adresse:
+        <strong>Adresse:</strong>
         {{client.address}}
         <br>
-        Commandes:
+        <strong>Commandes:</strong>
         {{client.order}}
         <br>
-        Solde:
+        <strong>Solde:</strong>
         {{client.balance}}
         <br>
-        Facturation:
+        <strong>Facturation:</strong>
         {{client.facturation}}
         <br>
-        Droit a une pizza gratuite : {{client.pizza_gratuite}}
+        <strong>Droit a une pizza gratuite : </strong>{{client.pizza_gratuite}}
     </div>`
 })
 

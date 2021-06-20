@@ -4,26 +4,28 @@ Vue.component('livraison', {
     <div class="livraisonscomponent">
    
       <div><p><br>
-      Livraison : {{livraison.id}}
+      <div id="livraison_id">
+        Livraison n. {{livraison.id}}
+      </div>
       <br>
-      Livreur:
+      <strong>Livreur:</strong>
       {{livraison.livreur.name}} {{livraison.livreur.surname}}
       <br>
-      Client:
+      <strong>Client:</strong>
       {{livraison.client.name}} {{livraison.client.surname}}
       <br>
-      Pizza:
+      <strong>Pizza:</strong>
       {{livraison.pizza.name}} {{livraison.size.name}}
       <br>
-      Prix:
+      <strong>Prix:</strong>
       {{livraison.size.price}} $
       <br>
-     Vehicule : 
+      <strong>Vehicule : </strong>
       {{livraison.vehicule.name}}
       <br>
-      Date: {{livraison.date}}
+      <strong>Date: </strong>{{livraison.date}}
       <br>
-      Retard : {{livraison.retard}}
+      <strong>Retard : </strong>{{livraison.retard}}
       </p> </div>
       </div>
       `

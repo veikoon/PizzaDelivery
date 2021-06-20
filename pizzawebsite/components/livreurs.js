@@ -5,16 +5,16 @@ Vue.component('livreurs', {
         <div class = "name">
             <p id="staffname">{{livreur.name}}</p> {{livreur.surname}}
         </div>
-            Age:
+            <strong>Age:</strong>
             {{livreur.age}}
             <br>
-            Retards : 
+            <strong>Retards : </strong>
             {{livreur.retard}}
             <br>
-            Phone : 
+            <strong>Phone : </strong>
             {{livreur.phone}}
             <br>
-            Adresse : 
+            <strong>Adresse : </strong>
             {{livreur.address}}
         </div>
     </div>`

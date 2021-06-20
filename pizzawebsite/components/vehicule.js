@@ -5,7 +5,7 @@ Vue.component('vehicules', {
         <div class = "name">
             <p id="vehiculename">{{vehicule.name}}</p> 
         </div>
-            id:
+        <strong>ID du vehicule:</strong>
             {{vehicule.id}}
             <div class="remove">
                 <button onclick="deletevehicule(document.getElementById('vehiculename').value)">Supprimer le Vehicule</button>
