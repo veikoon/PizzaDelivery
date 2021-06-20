@@ -24,6 +24,40 @@
         <div id="livraison">
             <livraison v-for="livraison in livraisons" v-bind:key="livraison.id" v-bind:livraison='livraison'></livraison>
         </div>
+
+        <div class="new_component">
+            <div class="add_headline">
+                <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->
+
+                <div class="add_text">
+                    Signaler un retard
+                </div>
+            </div>
+            <div class="form_centering">
+                <form>
+                    <div class="form_content">
+
+                        <br>
+                        <div> Numero de livraison:
+                            <select v-model="selected" id="livraisonsdropdown">
+                                <option v-for="livraison in livraisons" v-bind:value="livraison.id">
+                                    {{livraison.id}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <br>
+                    <input name="Ajouter" type="submit" value="Signaler" onclick="signaldelay()">
+                    </p>
+                </form>
+
+            </div>
+            <br>
+        </div>
+
+
         <div class="new_component">
             <div class="add_headline">
                 <!--<img src="../resources/add_icon.png" class="add_icon" alt="Add product icon" /> !-->

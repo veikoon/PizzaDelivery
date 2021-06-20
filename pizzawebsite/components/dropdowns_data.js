@@ -173,3 +173,30 @@ var app6 = new Vue({
         })
     }
 })
+
+var app7 = new Vue({
+    el: '#livraisonsdropdown',
+    data: {
+        selected: 1,
+        livraisons: []
+    },
+    methods: {
+
+    },
+    mounted: function() {
+        this.$nextTick(function() {
+            const fetchpromise = fetch("http://localhost:8080/delivery/all");
+            fetchpromise.then(response => {
+                return response.json();
+            }).then(delivery => {
+
+                console.log(delivery);
+                for (let i = 0; i < delivery.length; i++) {
+                    this.livraisons.push({
+                        id: delivery[i].id,
+                    })
+                }
+            });
+        })
+    }
+})

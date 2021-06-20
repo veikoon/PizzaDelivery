@@ -180,24 +180,13 @@ function adddelivery() {
             }
         });
     });
+}
 
-
-    /*
-
-        console.log(document.getElementById("livreursdropdown").value);
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        fetch("http://localhost:8080/delivery/new", {
-                method: "POST",
-                headers: myHeaders,
-                body: JSON.stringify({
-                    "staff": document.getElementById("livreursdropdown").value,
-                    "client": document.getElementById("clientsdropdown").value,
-                    "vehicule": document.getElementById("vehiculesdropdown").value,
-                    "pizza": document.getElementById("pizzasdropdown").value,
-                    "size": document.getElementById("sizesdropdown").value,
-                })
-            })
-            .then(response => console.log(response.json()))
-            .catch(error => console.log("Erreur: " + error));*/
+function signaldelay() {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    fetch("http://localhost:8080/delivery/islate?id=" + document.getElementById("livraisonsdropdown").value + "&late=true", {
+        method: "POST",
+        headers: myHeaders
+    })
 }
