@@ -4,6 +4,8 @@ Vue.component('livraison', {
     <div class="livraisonscomponent">
    
       <div><p><br>
+      Livraison : {{livraison.id}}
+      <br>
       Livreur:
       {{livraison.livreur.name}} {{livraison.livreur.surname}}
       <br>
@@ -23,17 +25,19 @@ Vue.component('livraison', {
       <br>
       Retard : {{livraison.retard}}
       </p> </div>
-      <button onclick="setLate(livraison.id)">Signaler un retard</button>
-      <div class="remove">
-      <button >Supprimer la livraison</button>
       </div>
-      </div>`
+      `
 })
 
 var app = new Vue({
     el: '#livraison',
     data: {
         livraisons: []
+    },
+    methods: {
+        signaldelay: function() {
+            console.log("delaya");
+        }
     },
     mounted: function() {
         this.$nextTick(function() {
